@@ -1,0 +1,161 @@
+!kuba
+! *foreground: #D7D0C7
+! *background: #151515
+! *color0:     #1F1F1F
+! *color8:     #404040
+! *color1:     #911C19
+! *color9:     #9B2724
+! *color2:     #586B33
+! *color10:    #5E793F
+! *color3:     #B1B863
+! *color11:    #C0CA6E
+! *color4:     #3F5489
+! *color12:    #404CB3
+! *color5:     #82345F
+! *color13:    #B63B9F
+! *color6:     #547F72
+! *color14:    #789CA0
+! *color7:     #dddddd
+! *color15:    #dddddd
+
+! ! erosion
+! *background: #181512
+! *foreground: #bea492
+! *cursorColor: #93a1a1
+! *color0: #332d29
+! *color8: #817267
+! *color1: #8c644c
+! *color9: #9f7155
+! *color2: #c4be90
+! *color10: #bec17e
+! *color3: #bfba92
+! *color11: #fafac0
+! *color4: #646a6d
+! *color12: #626e74
+! *color5: #6d6871
+! *color13: #756f7b
+! *color6: #3b484a
+! *color14: #444d4e
+! *color7: #504339
+! *color15: #9a875f
+
+! ! Pretty Colors by hal
+! urxvt.foreground: 	#738A8A
+! urxvt.background: 	#181512
+! urxvt.cursorColor:  #CA5E64
+! urxvt.color0:       #3B444F
+! urxvt.color8:       #4A585A
+! urxvt.color1:       #CD546C
+! urxvt.color9:       #EF545F
+! urxvt.color2:       #A5AF86
+! urxvt.color10:      #BDC79E
+! urxvt.color3:       #CD7860
+! urxvt.color11:      #E88773
+! urxvt.color4:       #7A9388
+! urxvt.color12:      #94B1A3
+! urxvt.color5:       #75434C
+! urxvt.color13:      #BB6C73
+! urxvt.color6:       #767D75
+! urxvt.color14:      #9DA69E
+! urxvt.color7:       #C2C2A8
+! urxvt.color15:      #DBDAC1
+
+
+! Parker Brothers
+*background:        #0F0E0F
+*foreground:        #A59461
+*color0:    #322a2c
+*color8:    #46423b
+*color1:    #79220E
+*color9:    #AA261F
+*color2:    #344B1B
+*color10:   #76550F
+*color3:    #B45B00
+*color11:   #B57F02
+*color4:    #434045
+*color12:   #908862
+*color5:    #5C1E25
+*color13:   #624A35
+*color6:    #394745
+*color14:   #393E38
+*color7:    #AE8842
+*color15:   #A59058
+
+*foreground: #C7C7C7
+*background: #151515
+!black
+*color0:     #393939
+*color8:     #474747
+!red
+*color1:     #FF9F95
+*color9:     #FF8D80
+!green
+*color2:     #E2FFC7
+*color10:    #DBFFB3
+!yellow
+*color3:     #FFFFB9
+*color11:    #FFBE64
+!blue
+*color4:     #A8CEEA
+*color12:    #7EB6FF
+!magenta
+*color5:     #E2B5CC
+*color13:    #E296FF
+!cyan
+*color6:     #C2EFFF
+*color14:    #9CE9FF
+!white
+*color7:     #dddddd
+*color15:    #dddddd
+
+! dotshare
+*foreground: #D7D0C7
+*background: #151515
+
+!black
+! *color0:     #AF875F
+! *color8:     #AF875F
+*color0:     #101010
+*color8:     #404040
+!red
+*color1:     #E84F4F
+*color9:     #D23D3D
+!green
+*color2:     #B8D68C
+*color10:    #A0CF5D
+!yellow
+*color3:     #E1AA5D
+*color11:    #F39D21
+!blue
+*color4:     #7DC1CF
+*color12:    #4E9FB1
+!magenta
+*color5:     #9B64FB
+*color13:    #8542FF
+!cyan
+*color6:     #6D878D
+*color14:    #42717B
+!white
+*color7:     #dddddd
+*color15:    #dddddd
+
+! urxvt*font: -jmk-neep-medium-r-semicondensed--11-100-75-75-c-50-iso8859-1
+urxvt*font: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
+urxvt*boldFont: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
+
+urxvt.scrollBar: false
+
+urxvt.perl-ext-common: default,matcher,keyboard-select,url-select
+
+urxvt.matcher-button: 2
+
+urxvt.keysym.M-Escape: perl:keyboard-select:activate
+urxvt.keysym.M-s: perl:keyboard-select:search
+urxvt.keysym.M-u: perl:url-select:select_next
+
+urxvt.url-launcher: /usr/bin/firefox-bin
+urxvt.url-select.launcher: /usr/bin/firefox-bin
+
+
+
+emacs*font: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1

@@ -17,6 +17,7 @@ precmd() {
 	vcs_info
 	
 	# check if virtualenv activated and get the name
+	# Yes, I really am too cool to use $(basedir)
 	[ $VIRTUAL_ENV ] && local venv="%F{10}(venv:%f${VIRTUAL_ENV##*/}%F{10})%f "
 	
 	typeset -A items

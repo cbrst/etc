@@ -5,3 +5,6 @@ herbstluftwm/
 ncmpcpp/error.log
 xmonad/*
 !xmonad/xmonad.hs
+emacs/auto-save-list
+emacs/elpa
+emacs/url

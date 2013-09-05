@@ -16,6 +16,12 @@ alias ls="ls --color=auto"
 alias l="ls"
 alias ll="ls -lh"
 
+# git
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gco="git config"
+
 # wrapper scripts
 alias tmux="tmux_wrapper.sh"
 

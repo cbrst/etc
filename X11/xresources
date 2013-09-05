@@ -143,6 +143,8 @@
 urxvt*font: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
 urxvt*boldFont: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
 
+!urxvt*font: xft:Source Code Pro:size=7
+
 urxvt.scrollBar: false
 
 urxvt.perl-ext-common: default,matcher,keyboard-select,url-select

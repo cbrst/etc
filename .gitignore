@@ -2,3 +2,6 @@ fb-client/apikey
 gtk-2.0/
 .openoffice/
 herbstluftwm/
+ncmpcpp/error.log
+xmonad/*
+!xmonad/xmonad.hs

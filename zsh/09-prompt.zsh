@@ -15,7 +15,10 @@ zstyle ':vcs_info:*' nvcsformats   ""                           "%~"
 precmd() {
 	
 	vcs_info
-
+	
+	# check if virtualenv activated and get the name
+	[ $VIRTUAL_ENV ] && local venv="%F{10}(venv:%f${VIRTUAL_ENV##*/}%F{10})%f "
+	
 	typeset -A items
 	items=(
 		user    '%(#.%F{1}.%F{3})%n'
@@ -24,9 +27,10 @@ precmd() {
 		tty     '%F{4}%y'
 		exit    '%(?..%F{202}%?%f)'
 		vcs     "${vcs_info_msg_0_}"
+		venv    "$venv"
 	)
 
-	show=(pwd)
+	show=(venv pwd)
 
 	PS1=' '
 	for item in $show; do

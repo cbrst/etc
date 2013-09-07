@@ -7,5 +7,6 @@
 
 ;; emacs doesn't know about these by default.
 (add-to-list 'auto-mode-alist
-						 '(".zsh" . sh-mode))
+             '(".zsh"  . sh-mode)
+             '(".hamd" . haml-mode))
 

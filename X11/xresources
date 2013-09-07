@@ -139,11 +139,20 @@
 *color7:     #dddddd
 *color15:    #dddddd
 
-! urxvt*font: -jmk-neep-medium-r-semicondensed--11-100-75-75-c-50-iso8859-1
-urxvt*font: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
-urxvt*boldFont: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+Xft.dpi: 96
 
-!urxvt*font: xft:Source Code Pro:size=7
+! urxvt*font: -jmk-neep-medium-r-semicondensed--11-100-75-75-c-50-iso8859-1
+! urxvt*font: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
+! urxvt*boldFont: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
+
+!urxvt*font: xft:Source Code Pro:size=6.8
+urxvt*font: xft:PragmataPro:size=7
 
 urxvt.scrollBar: false
 
@@ -159,5 +168,6 @@ urxvt.url-launcher: /usr/bin/firefox-bin
 urxvt.url-select.launcher: /usr/bin/firefox-bin
 
 
+! emacs*font: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
+! emacs*font: xft:Source Code Pro:size=7
 
-emacs*font: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1

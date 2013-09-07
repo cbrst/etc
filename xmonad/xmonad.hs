@@ -4,8 +4,11 @@ import qualified XMonad.StackSet as W
 -- Hooks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.EwmhDesktops
 
 -- Layouts
+-- import XMonad.Layout.Fullscreen
 import XMonad.Layout.Gaps
 import XMonad.Layout.Named
 import XMonad.Layout.NoBorders
@@ -30,6 +33,7 @@ main = do
            , normalBorderColor  = myNormalBorderColor
            , focusedBorderColor = myFocusedBorderColor
            , manageHook         = myManageHook
+           , handleEventHook    = ewmhDesktopsEventHook <+> fullscreenEventHook
            , logHook            = dynamicLogWithPP $ myPP { ppOutput = hPutStrLn bar }
            , layoutHook         = myLayout
            , startupHook        = myStartupHook
@@ -38,7 +42,7 @@ main = do
 
 -- Startup
 myStartupHook = do
-  spawn "feh --bg-fill ~/vinyl.png"
+  spawn "xsetroot -solid '#080808'"
   spawn ("while true; do echo -n '^fg(#e1aa5d)'; date +%H:%M; sleep 60; done | dzen2 -p " ++ myDzenStyle2)
   spawn ("~/etc/xmonad/dzen-irssi.sh | dzen2 " ++ myDzenStyle3)
 
@@ -53,21 +57,23 @@ myBrowser            = "firefox-bin"
 myFocusFollowsMouse  = False
 myWorkspaces         = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
 myBorderWidth        = 1
-myNormalBorderColor  = "#090909"
+myNormalBorderColor  = "#202020"
 myFocusedBorderColor = "#404040"
 -- myFocusedBorderColor = "#e84f4f"
 
 -- Bar
-myDzenFont = "-jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1"
-myDzenStyle1 = "-fn " ++ myDzenFont ++ " -h 17 -w 600 -ta l -bg '" ++ myNormalBorderColor ++ "'"
-myDzenStyle2 = "-fn " ++ myDzenFont ++ " -h 17 -w 80 -x 600 -bg '" ++ myNormalBorderColor ++ "'"
-myDzenStyle3 = "-fn " ++ myDzenFont ++ " -h 17 -w 600 -x 680 -ta r -bg '" ++ myNormalBorderColor ++ "'"
+-- myDzenFont = "-jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1"
+myDzenFont = "PragmataPro-7"
+myDzenBackground = "#151515"
+myDzenStyle1 = "-fn " ++ myDzenFont ++ " -h 17 -w 600 -ta l -bg '" ++ myDzenBackground ++ "'"
+myDzenStyle2 = "-fn " ++ myDzenFont ++ " -h 17 -w 80 -x 600 -bg '" ++ myDzenBackground ++ "'"
+myDzenStyle3 = "-fn " ++ myDzenFont ++ " -h 17 -w 600 -x 680 -ta r -bg '" ++ myDzenBackground ++ "'"
 myPP = defaultPP { ppCurrent = dzenColor "#a0cf5d" "" . pad
                  , ppHidden  = dzenColor "#6d878d" "" . pad
                  , ppWsSep   = ""
                  , ppSep     = dzenColor "#404040" "" "|"
                  , ppLayout  = dzenColor "#e84f4f" "" . pad
-                 , ppTitle   = dzenColor "#7cd1cf" "" . shorten 60 . pad
+                 , ppTitle   = dzenColor "#404040" "" . shorten 60 . pad
                  }
 
 -- Layout
@@ -75,7 +81,7 @@ myLayout = gaps [(U,17)] $ onWorkspace "II" myFull $ (myLayouts)
            where
              myLayouts = myTall ||| myFull
 
-             myTall = named "+" (spacing 7 $ Tall 1 (3/100) (1/2))
+             myTall = named "+" (spacing 1 $ Tall 1 (1/100) (1/2))
              myFull = named "*" (noBorders Full)
 
 myKeys conf@(XConfig {XMonad.modMask = mod}) = M.fromList $
@@ -123,6 +129,18 @@ myKeys conf@(XConfig {XMonad.modMask = mod}) = M.fromList $
        , ((mod,               xK_w),      spawn myMenu)
        , ((mod,               xK_b),      spawn myBrowser)
        , ((mod,               xK_e),      spawn myEditor)
+
+       -- ========== --
+       -- Media Keys --
+       -- ========== --
+
+       , ((0,                0x1008FF11), spawn "amixer set Master 2-")
+       , ((0,                0x1008FF13), spawn "amixer set Master 2+")
+       , ((0,                0x1008FF12), spawn "amixer set Master toggle")
+       , ((0,                0x1008FF14), spawn "mpc toggle")
+       , ((0,                0x1008FF15), spawn "mpc stop")
+       , ((0,                0x1008FF16), spawn "mpc prev")
+       , ((0,                0x1008FF17), spawn "mpc next")
        ]
        ++
        -- switch workspaces
@@ -131,4 +149,10 @@ myKeys conf@(XConfig {XMonad.modMask = mod}) = M.fromList $
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
 
 myManageHook = composeAll
-               [ resource =? "bashrun2-run-dialog" --> doFloat ]
+               [ resource  =? "bashrun2-run-dialog" --> doFloat
+               , className =? "Xmessage"            --> doFloat
+               , className =? "mplayer2"            --> doFloat
+               , resource  =? "VCLSalFrame"         --> doFloat
+               ]
+               <+>
+               composeOne [ isFullscreen -?> doFullFloat ]

@@ -1,5 +1,8 @@
 (add-to-list 'custom-theme-load-path
-						 (concat emacs-dir "themes/"))
+             (concat emacs-dir "themes/"))
+
+;; (set-face-attribute 'default nil :font "Source Code Pro-7")
+(set-face-attribute 'default nil :font "PragmataPro-7")
 
 (load-theme 'dotshare t)
 

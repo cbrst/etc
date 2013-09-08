@@ -11,3 +11,6 @@ let mapleader = ","
 
 " git.io url shortener
 nmap <silent> <Leader>io :javascript util.copyToClipboard(userContext.gitio());<CR>
+
+" goo.gl url shortener
+nmap <silent> <Leader>goo :googleUrlShortener<CR>

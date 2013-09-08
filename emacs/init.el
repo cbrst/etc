@@ -9,6 +9,31 @@
 
 (package-initialize)
 
+;; Make sure these are installed
+(defvar elpa-required-packages '(
+                                 evil
+                                 evil-leader
+                                 evil-nerd-commenter
+                                 evil-numbers
+                                 evil-paredit
+                                 haml-mode
+                                 haskell-mode
+                                 lua-mode
+                                 multiple-cursors
+                                 paredit
+                                 rainbow-delimiters
+                                 rainbow-mode
+                                 smart-tab
+                                 smart-tabs-mode
+                                 stylus-mode
+                                 sws-mode
+                                 undo-tree
+                                 yasnippet)
+  "Default Packages")
+
+(dolist (pkg elpa-required-packages)
+  (when (not (package-installed-p pkg))
+    (package-install pkg)))
 
 ;; Load vendor and custom files
 ;;(defvar emacs-dir (file-name-directory load-file-name)

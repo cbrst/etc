@@ -108,7 +108,7 @@ myKeys conf@(XConfig {XMonad.modMask = mod}) = M.fromList $
        , ((mod,               xK_m),      windows W.focusMaster)
          
        -- swapping
-       , ((mod .|. shiftMask, xK_Return), windows W.swapMaster)
+       , ((mod .|. shiftMask, xK_m),      windows W.swapMaster)
        , ((mod .|. shiftMask, xK_j),      windows W.swapDown)
        , ((mod .|. shiftMask, xK_k),      windows W.swapUp)
 

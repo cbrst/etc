@@ -21,7 +21,7 @@ userContext.gitio = function gitioShortener (aURL, aCode, aCallback) {
 	xhr.send(form);
 	if (!aCallback && xhr.status === 201) {
 		var ret = xhr.getResponseHeader("Location");
-      liberator.echo('Shorten URL to \"'+ret+'\"');
+		liberator.echo('Shorten URL to \"'+ret+'\"');
 		return ret;
 	}
 };

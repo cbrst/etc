@@ -21,8 +21,10 @@ alias ll="ls -lh"
 # git
 alias ga="git add"
 alias gc="git commit"
-alias gp="git push"
 alias gco="git config"
+alias gd="git diff"
+alias gp="git push"
+alias gs="git status"
 
 # wrapper scripts
 alias t="tmux_wrapper.sh"

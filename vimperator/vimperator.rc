@@ -1,0 +1,13 @@
+colorscheme dotshare
+
+set scrollbars=false
+set status=input,bookmark,location
+
+set complete=lfS
+
+let g:smooziee_scroll_amount="150"
+
+let mapleader = ","
+
+" git.io url shortener
+nmap <silent> <Leader>io :javascript util.copyToClipboard(userContext.gitio());<CR>

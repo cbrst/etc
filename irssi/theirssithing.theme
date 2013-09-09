@@ -243,7 +243,7 @@ formats = {
     nick_changed = "%K{channick $[-13]0} %G>%n {channick $1}";
     your_nick_changed = "%K          you %G>%n {channick $1}";
 
-    pubmsg = "{pubmsgnick $2 {pubnick \00310$[-11]0}}$1";
+    pubmsg = "{pubmsgnick $2 {pubnick \00302$[-11]0}}$1";
 
     own_msg = "{ownmsgnick $2 {ownnick $[-11]0}}$1";
     own_msg_channel = "{ownmsgnick $3 {ownnick $[-11]0}{msgchannel $1}}$2";
@@ -270,11 +270,14 @@ formats = {
     action_private_query = "{pvtaction_query $[-11]0} $2";
     action_public = "{pubaction $[-11]0}$1";
 
-    ctcp_reply =             "%M!%K!       CTCP %m!%n $0 reply from $1: $2";
-    ctcp_reply_channel =     "%M!%K!       CTCP %m!%n $0 reply from $1 in $3: $2";
-    ctcp_ping_reply =        "%M!%K!       CTCP %m!%n {hilight PING} reply from $0: $1.$[-3.0]2 seconds";
-    ctcp_requested =         "%M!%K!       CTCP %m!%n $0 requested $2 from {nick $4}: $3";
+    ctcp_reply = "%M!%K!       CTCP %m!%n $0 reply from $1: $2";
+    ctcp_reply_channel = "%M!%K!       CTCP %m!%n $0 reply from $1 in $3: $2";
+    ctcp_ping_reply = "%M!%K!       CTCP %m!%n {hilight PING} reply from $0: $1.$[-3.0]2 seconds";
+    ctcp_requested = "%M!%K!       CTCP %m!%n $0 requested $2 from {nick $4}: $3";
     ctcp_requested_unknowm = "%M!%K!       CTCP %m!%n $0 requested unknown $2 from {nick $4}: $3";
+
+    channel_synced = "channel $0 was synced in $1 secs";
+    channel_created = "%M!%K!     channel %m!%n {channel $0} created {hilight $1}";
   };
   "Irssi::Script::ichat" = { ichat_timestamp = "%Y>%K>      $1 %y>%n"; };
 };

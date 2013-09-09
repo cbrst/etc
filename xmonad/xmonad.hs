@@ -133,7 +133,6 @@ myKeys conf@(XConfig {XMonad.modMask = mod}) = M.fromList $
 myManageHook = composeAll
                [ resource  =? "bashrun2-run-dialog" --> doFloat
                , className =? "Xmessage"            --> doFloat
-               , className =? "mplayer2"            --> doFloat
                , resource  =? "VCLSalFrame"         --> doFloat
                ]
                <+>

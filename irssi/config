@@ -294,20 +294,12 @@ settings = {
     hilight_log_path = "/home/crshd/var/log/irc/hilight.log";
   };
 };
-logs = { };
+logs = {
+  "~/var/log/irc/hilight.log" = { auto_open = "yes"; level = "HILIGHTS"; };
+};
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
   2 = {
-    items = (
-      {
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "*highlight";
-        tag = "Hub";
-      }
-    );
-  };
-  3 = {
     items = (
       {
         type = "CHANNEL";
@@ -317,17 +309,7 @@ windows = {
       }
     );
   };
-  4 = {
-    items = (
-      {
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "*highlight";
-        tag = "Node";
-      }
-    );
-  };
-  5 = {
+  3 = {
     items = (
       {
         type = "CHANNEL";
@@ -337,7 +319,7 @@ windows = {
       }
     );
   };
-  6 = {
+  4 = {
     items = (
       {
         type = "CHANNEL";
@@ -347,7 +329,7 @@ windows = {
       }
     );
   };
-  7 = {
+  5 = {
     items = (
       {
         type = "CHANNEL";
@@ -357,5 +339,16 @@ windows = {
       }
     );
   };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#vimperator";
+        tag = "Node";
+      }
+    );
+  };
 };
-mainwindows = { 2 = { first_line = "0"; lines = "23"; }; };
+mainwindows = { 1 = { first_line = "0"; lines = "33"; }; };
+hilights = ( { text = "crshd"; nick = "no"; word = "no"; } );

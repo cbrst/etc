@@ -23,10 +23,13 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-setxkbmap de
 xsetroot -cursor_name left_ptr
+
 xset +fp /usr/share/fonts/jmk
 xset fp rehash
+
+setxkbmap de_crshd
+xset r rate 190 40
 
 # start some nice programs
 

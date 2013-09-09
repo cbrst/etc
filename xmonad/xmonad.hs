@@ -16,7 +16,7 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Spacing
 
 -- Utils
-import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.SpawnOnce
 
 -- Non-Xmonad stuff
 import qualified Data.Map        as M
@@ -24,7 +24,6 @@ import System.IO
 
 
 main = do
-  bar <- spawnPipe ("dzen2 " ++ myDzenStyle1)
   xmonad $ defaultConfig
            { terminal           = myTerminal
            , modMask            = mod4Mask
@@ -34,7 +33,6 @@ main = do
            , focusedBorderColor = myFocusedBorderColor
            , manageHook         = myManageHook
            , handleEventHook    = ewmhDesktopsEventHook <+> fullscreenEventHook
-           , logHook            = dynamicLogWithPP $ myPP { ppOutput = hPutStrLn bar }
            , layoutHook         = myLayout
            , startupHook        = myStartupHook
            , workspaces         = myWorkspaces
@@ -42,9 +40,8 @@ main = do
 
 -- Startup
 myStartupHook = do
-  spawn "xsetroot -solid '#080808'"
-  spawn ("while true; do echo -n '^fg(#e1aa5d)'; date +%H:%M; sleep 60; done | dzen2 -p " ++ myDzenStyle2)
-  spawn ("~/etc/xmonad/dzen-irssi.sh | dzen2 " ++ myDzenStyle3)
+  spawnOnce "xsetroot -solid '#080808'"
+  spawnOnce "bar.sh"
 
 
 -- Applications
@@ -55,26 +52,11 @@ myBrowser            = "firefox-bin"
 
 -- Stuff
 myFocusFollowsMouse  = False
-myWorkspaces         = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+myWorkspaces         = ["WON", "TOO", "TREE", "FOR"]
 myBorderWidth        = 1
 myNormalBorderColor  = "#202020"
 myFocusedBorderColor = "#404040"
 -- myFocusedBorderColor = "#e84f4f"
-
--- Bar
--- myDzenFont = "-jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1"
-myDzenFont = "PragmataPro-7"
-myDzenBackground = "#151515"
-myDzenStyle1 = "-fn " ++ myDzenFont ++ " -h 17 -w 600 -ta l -bg '" ++ myDzenBackground ++ "'"
-myDzenStyle2 = "-fn " ++ myDzenFont ++ " -h 17 -w 80 -x 600 -bg '" ++ myDzenBackground ++ "'"
-myDzenStyle3 = "-fn " ++ myDzenFont ++ " -h 17 -w 600 -x 680 -ta r -bg '" ++ myDzenBackground ++ "'"
-myPP = defaultPP { ppCurrent = dzenColor "#a0cf5d" "" . pad
-                 , ppHidden  = dzenColor "#6d878d" "" . pad
-                 , ppWsSep   = ""
-                 , ppSep     = dzenColor "#404040" "" "|"
-                 , ppLayout  = dzenColor "#e84f4f" "" . pad
-                 , ppTitle   = dzenColor "#404040" "" . shorten 60 . pad
-                 }
 
 -- Layout
 myLayout = gaps [(U,17)] $ onWorkspace "II" myFull $ (myLayouts)

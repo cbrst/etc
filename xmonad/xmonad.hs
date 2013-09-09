@@ -59,12 +59,12 @@ myFocusedBorderColor = "#404040"
 -- myFocusedBorderColor = "#e84f4f"
 
 -- Layout
-myLayout = gaps [(U,17)] $ onWorkspace "II" myFull $ (myLayouts)
+myLayout = gaps [(U,17)] $ onWorkspace "II" myFull $ smartBorders (myLayouts)
            where
              myLayouts = myTall ||| myFull
 
              myTall = named "+" (spacing 1 $ Tall 1 (1/100) (1/2))
-             myFull = named "*" (noBorders Full)
+             myFull = named "*" Full
 
 myKeys conf@(XConfig {XMonad.modMask = mod}) = M.fromList $
        [ ((mod,               xK_q),      kill)

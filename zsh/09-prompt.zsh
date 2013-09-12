@@ -36,10 +36,13 @@ precmd() {
 	
 	# check if virtualenv activated and get the name
 	# Yes, I really am too cool to use $(basename)
-	[ $VIRTUAL_ENV ] && local PS_VENV="%F{10}(venv:%f%B${VIRTUAL_ENV##*/}%b%F{10})%f %B$(python -V 2>&1 | cut -d ' ' -f 2)%b"
+	[ $VIRTUAL_ENV ] && local PS_VENV="%F{10}(venv:%f%B${VIRTUAL_ENV##*/}%b%F{10})%f %B$(python -V 2>&1 | cut -d ' ' -f 2)%b "
+	
+	# do the same thing for virtual perl envs
+	[ $PENV_ENV ] && local PS_PENV="%F{11}(venv:%f%B${PENV_ENV##*/}%b%F{11})%f %B$(perl -v | sed -e '2!d' -e 's/.*v\([5-6]\.[0-9]\{2\}\.[0-9]*\).*/\1/')%b "
 
 	# Set prompt
-	PS1="${PS_EXIT}${PS_VENV} ${PS_PWD} %F{11}»%f "
+	PS1="${PS_EXIT} ${PS_VENV}${PS_PENV}${PS_PWD} %F{11}»%f "
 }
 	
 

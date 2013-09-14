@@ -19,10 +19,12 @@
                                  haml-mode
                                  haskell-mode
                                  lua-mode
+                                 markdown-mode
                                  multiple-cursors
                                  paredit
                                  rainbow-delimiters
                                  rainbow-mode
+                                 sawfish
                                  smart-tab
                                  smart-tabs-mode
                                  stylus-mode

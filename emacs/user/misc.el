@@ -14,3 +14,5 @@
  'c++
  'java
  'javascript)
+
+(setq tetris-score-file "~/etc/emacs/tetris-scores")

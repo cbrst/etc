@@ -6,7 +6,10 @@
 
 
 ;; emacs doesn't know about these by default.
-(add-to-list 'auto-mode-alist
-             '(".zsh"  . sh-mode)
-             '(".hamd" . haml-mode))
-
+(setq auto-mode-alist
+      (nconc
+       '((".hamd"      . haml-mode))
+       '((".sawfishrc" . sawfish-mode))
+       '((".jl"        . sawfish-mode))
+       '((".zsh"       . sh-mode))
+       auto-mode-alist))

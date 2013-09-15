@@ -7,8 +7,6 @@
 
 (setq require-final-newline t)
 
-(paredit-mode 1)
-
 (smart-tabs-insinuate
  'c
  'c++

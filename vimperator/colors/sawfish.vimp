@@ -59,13 +59,19 @@ style chrome://* <<EOM
 
 	#TabsToolbar {
 		-moz-appearance: none !important;
-		background: #dedede !important;
+		background-color: #dedede !important;
+		background-image: -moz-linear-gradient(top,
+		                                  #dedede 0%,
+																			#dedede 40%,
+                                      #d0d0d0 100%) !important;
 		border-bottom: 1px solid #090909 !important;
 		height: 22px !important;
 	 	font-family: PragmataPro !important;
 		font-size: 9px !important;
 		font-weight: bold !important;
 		color: #151515 !important;
+		padding-right: 62px !important;
+		box-shadow: inset 0 1px 0 #f1f1f1 !important;
 	}
 
 	.tabbrowser-tab, .tabs-newtab-button {

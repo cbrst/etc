@@ -107,7 +107,7 @@
    `(font-lock-keyword-face ((,class (:foreground ,dotshare-yellow :weight bold))))
    `(font-lock-negation-char-face ((,class (:foregorund ,dotshare-fg))))
    `(font-lock-preprocessor-face ((,class (:foreground ,dotshare-blue))))
-   `(font-lock-string-face ((,class (:foreground ,dotshare-red))))
+   `(font-lock-string-face ((,class (:foreground ,dotshare-magenta))))
    `(font-lock-type-face ((,class (:foregorund ,dotshare-yellow))))
    `(font-lock-variable-name-face ((,class (:foreground ,dotshare-yellow))))
    `(font-lock-warning-face ((,class (:foreground ,dotshare-yellow :weight bold :underline t))))

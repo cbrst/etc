@@ -2,8 +2,11 @@
 
 userresources=$HOME/etc/X11/xresources
 usermodmap=$HOME/etc/X11/modmap
+
 sysresources=/etc/X11/xinit/Xresources
 sysmodmap=/etc/X11/xinit/Xmodmap
+
+composite=$XDG_CONFIG_HOME/X11/compton.conf
 
 # merge in defaults and keymaps
 
@@ -23,14 +26,24 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
+if [ -f "$composite" ]; then
+	compton -b --config "$composite"
+fi
+
 xsetroot -cursor_name left_ptr
-xmodmap ${XDG_CONFIG_HOME}/X11/xmodmap
 
 xset +fp /usr/share/fonts/jmk
 xset fp rehash
 
 setxkbmap de_crshd
 xset r rate 190 40
+
+(
+	while true; do
+		wallpaper
+		sleep 600
+	done
+&)
 
 # start some nice programs
 

@@ -65,7 +65,7 @@ style chrome://* <<EOM
 																			#dedede 40%,
                                       #d0d0d0 100%) !important;
 		border-bottom: 1px solid #090909 !important;
-		height: 22px !important;
+		height: 23px !important;
 	 	font-family: PragmataPro !important;
 		font-size: 9px !important;
 		font-weight: bold !important;
@@ -83,6 +83,7 @@ style chrome://* <<EOM
 		max-height: 22px !important;
 		text-align: center !important;
 		margin: 0 3px !important;
+		padding: 0 5px !important;
 	}
 
 	.tabbrowser-tab[selected="true"] {

@@ -3,16 +3,18 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-				evil-backward-char
-				evil-forward-char
-				evil-insert
-				evil-normal-state
-				))
+        evil-backward-char
+        evil-forward-char
+        evil-insert
+        evil-normal-state
+        evil-previous-line
+        ))
 
 (setq mc/cmds-to-run-once
       '(
-				evil-delete-backward-char-and-join
-				evil-force-normal-state
-				evil-next-line
-				evil-search-next
-				))
+        evil-delete
+        evil-delete-backward-char-and-join
+        evil-force-normal-state
+        evil-next-line
+        evil-search-next
+        ))

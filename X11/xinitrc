@@ -38,12 +38,10 @@ xset fp rehash
 setxkbmap de_crshd
 xset r rate 190 40
 
-(
-	while true; do
-		wallpaper
-		sleep 600
-	done
-&)
+(while true; do
+	wallpaper
+	sleep 600
+done &)
 
 # start some nice programs
 

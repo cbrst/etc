@@ -11,6 +11,7 @@
 
 ;; Make sure these are installed
 (defvar elpa-required-packages '(
+                                 auto-complete
                                  evil
                                  evil-leader
                                  evil-nerd-commenter

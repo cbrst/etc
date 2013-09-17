@@ -14,3 +14,8 @@
  'javascript)
 
 (setq tetris-score-file "~/etc/emacs/tetris-scores")
+
+(ido-mode t)
+
+;; i'm too lazy to type 2-3 characters
+(defalias 'yes-or-no-p 'y-or-n-p)

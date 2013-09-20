@@ -14,3 +14,11 @@ nmap <silent> <Leader>io :javascript util.copyToClipboard(userContext.gitio());<
 
 " goo.gl url shortener
 nmap <silent> <Leader>goo :googleUrlShortener<CR>
+
+" tab groups
+nmap <silent> <F1> :tabgroups switch 1<CR>
+nmap <silent> <F2> :tabgroups switch 2<CR>
+nmap <silent> <F3> :tabgroups switch 3<CR>
+nmap <silent> <F4> :tabgroups switch 4<CR>
+nmap <silent> <F5> :tabgroups switch 5<CR>
+nmap <silent> <F6> :tabgroups switch 6<CR>

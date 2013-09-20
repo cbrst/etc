@@ -8,6 +8,7 @@
 ;; emacs doesn't know about these by default.
 (setq auto-mode-alist
       (nconc
+       '((".ejs"       . html-mode))
        '((".hamd"      . haml-mode))
        '((".sawfishrc" . sawfish-mode))
        '((".jl"        . sawfish-mode))

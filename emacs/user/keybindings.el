@@ -14,5 +14,6 @@
 (global-set-key (kbd "C-x x") 'execute-extended-command)
 
 ;; evil
+(define-key evil-normal-state-map (kbd "\"") 'paredit-doublequote)
 (define-key evil-normal-state-map (kbd "gg") 'evilnc-comment-or-uncomment-lines)
 (define-key evil-visual-state-map (kbd "gg") 'evilnc-comment-or-uncomment-lines)

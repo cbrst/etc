@@ -19,3 +19,6 @@
 
 ;; i'm too lazy to type 2-3 characters
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; enable autopair mode globally.
+(autopair-mode 1)

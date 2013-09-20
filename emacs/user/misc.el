@@ -1,3 +1,12 @@
+;; default window size
+(defun set-frame-size-according-to-resolution ()
+  (interactive)
+  (if window-system
+      (progn
+        (add-to-list 'default-frame-alist (cons 'height 60))
+        (add-to-list 'default-frame-alist (cons 'width 120)))))
+(set-frame-size-according-to-resolution)
+
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 

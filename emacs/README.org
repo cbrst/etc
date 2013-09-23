@@ -1,0 +1,16 @@
+* emacs.d
+
+Probably the most advanced and useful part of my configuration files. This is where I set up my working environment, without which I would not be able to do any actual work
+
+** init.el -- Or: auto-loading packages and modular Emacs configuration
+
+This file does nothing more than handling loading stuffs. We start out adding some package archives for ELPA, and defining a list of required packages.
+On every startup, Emacs will check the installed packages against elpa-required-packages, and download the ones that are not installed yet.
+This is useful when moving my .emacs.d to a new machine.
+
+Then, we go on to append Emacs' load-path, to include both =vendor= and =user= dirs.
+Every 3rd-party module I'm installing that's _not_ available through ELPA goes into =vendor=.
+All of my custom configurations go into =user=, all (more or less) neatly grouped into separate files by context. The grouping is subject to change as I revise my arrangement.
+
+Finally, we auto-load =^[^#].*el$= from =user=, which are all of my custom .el files in the =user= directory.
+

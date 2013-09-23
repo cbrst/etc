@@ -8,6 +8,8 @@ sysmodmap=/etc/X11/xinit/Xmodmap
 
 composite=$XDG_CONFIG_HOME/X11/compton.conf
 
+colortheme=$XDG_CONFIG_HOME/X11/colors/crshd_dotshare
+
 # merge in defaults and keymaps
 
 xsetroot -cursor_name left_ptr
@@ -30,6 +32,10 @@ if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
 fi
 
+if [ -f "$colortheme" ]; then
+    xrdb -merge "$colortheme"
+fi
+
 if [ -f "$usermodmap" ]; then
 	xmodmap "$usermodmap"
 fi
@@ -37,7 +43,6 @@ fi
 if [ -f "$composite" ]; then
 	compton -b --config "$composite"
 fi
-
 
 # start some nice programs
 

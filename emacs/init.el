@@ -21,7 +21,9 @@
                                  haml-mode
                                  haskell-mode
                                  lua-mode
+                                 magit
                                  markdown-mode
+                                 mmm-mode
                                  multiple-cursors
                                  paredit
                                  rainbow-delimiters

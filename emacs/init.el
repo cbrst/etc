@@ -14,12 +14,9 @@
                                  auto-complete
                                  autopair
                                  evil
-                                 evil-leader
-                                 evil-nerd-commenter
-                                 evil-numbers
-                                 evil-paredit
                                  haml-mode
                                  haskell-mode
+                                 js3-mode
                                  lua-mode
                                  magit
                                  markdown-mode
@@ -34,7 +31,15 @@
                                  stylus-mode
                                  sws-mode
                                  undo-tree
-                                 yasnippet)
+                                 yasnippet
+                                 ;; From here on, these packages depend on one
+                                 ;; or more of the above, so they have to be
+                                 ;; installed last
+                                 ac-emmet
+                                 evil-leader
+                                 evil-nerd-commenter
+                                 evil-numbers
+                                 evil-paredit)
   "Default Packages")
 
 (dolist (pkg elpa-required-packages)
@@ -42,7 +47,6 @@
     (package-install pkg)))
 
 ;; Load vendor and custom files
-;;(defvar emacs-dir (file-name-directory load-file-name)
 (defvar emacs-dir "/home/crshd/etc/emacs/"
 	"top level emacs dir")
 

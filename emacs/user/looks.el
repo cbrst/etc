@@ -13,5 +13,6 @@
 (setq inhibit-splash-screen t)
 (global-hl-line-mode 1)
 
-(linum-mode t)
 (setq linum-format " %3d")
+
+(global-rainbow-delimiters-mode t)

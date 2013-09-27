@@ -1,27 +1,32 @@
-# The following lines were added by compinstall
-
-zstyle ':completion:*' completer _expand _complete _ignored _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '/home/crshd/.zshrc'
-
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
+
+autoload -Uz colors
+
+zmodload zsh/complist
+zmodload zsh/terminfo
+
 HISTFILE=~/var/zsh/histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory autocd extendedglob
-# End of lines configured by zsh-newuser-install
 
+setopt appendhistory autocd ksh_glob extendedglob inc_append_history
+
+# ZLE use Vi
+bindkey -v
+
+# Debug mode
+DEBUG=0
+function debug {
+	[[ $DEBUG > 0 ]] && echo "\033[1;33mDEBUG:\033[0m zsh: $1"
+}
+function error {
+	echo "\033[1;31mERROR:\033[0m zsh: $1"
+}
+
+# Load modularized config
 for r in $HOME/etc/zsh/*.zsh; do
-	if [[ $DEBUG > 0 ]]; then
-		echo "zsh: sourcing $r"
-	fi
+	debug "sourcing $r"
 	source $r
 done
 

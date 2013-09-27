@@ -38,3 +38,19 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-init
     zle -N zle-line-finish
 fi
+
+# Check if history-substring-search is loaded, and set the corresponding keybinds if it is
+if (( $+HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS )); then
+	debug "Setting history-substring-search keybindings"
+	# bind UP and DOWN arrow keys
+	bindkey "$terminfo[kcuu1]" history-substring-search-up
+	bindkey "$terminfo[kcud1]" history-substring-search-down
+
+	# bind P and N for EMACS mode
+	bindkey -M emacs '^P' history-substring-search-up
+	bindkey -M emacs '^N' history-substring-search-down
+
+	# bind k and j for VI mode
+	bindkey -M vicmd 'k' history-substring-search-up
+	bindkey -M vicmd 'j' history-substring-search-down
+fi

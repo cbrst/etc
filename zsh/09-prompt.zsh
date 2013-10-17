@@ -23,16 +23,15 @@ zstyle ':vcs_info:git:*' actionformats   "%F{9}(${FMT_REPO}%F{9}) ${FMT_BRANCH} 
 zstyle ':vcs_info:hg:*'  actionformats   "%F{13}(${FMT_REPO}%F{13}) ${FMT_BRANCH} %u%c ${FMT_ACTION}"
 zstyle ':vcs_info:svn:*' actionformats   "%F{14}(${FMT_REPO}%F{14}) ${FMT_BRANCH} %u%c ${FMT_ACTION}"
 
-local PS_USER="%(#.%F{1}.%F{3})%n%f"
-local PS_MACH="%F{1}%M%f"
-local PS_PWD="%F{5}%~%f"
+local PS_USER="%(#.%F{1}.%F{6})%n%f"
+local PS_MACH="%F{4}%M%f"
+local PS_PWD="[%B%F{7}%c%f%b]"
 local PS_TTY="%F{4}%y%f"
 local PS_EXIT="%(?..%F{202}%?%f )"
 
 precmd() {
 	# Enable VCS display
 	vcs_info
-	RPROMPT=${vcs_info_msg_0_}
 	
 	# check if virtualenv activated and get the name
 	# Yes, I really am too cool to use $(basename)
@@ -42,7 +41,8 @@ precmd() {
 	[ $PENV_ENV ] && local PS_PENV="%F{11}(venv:%f%B${PENV_ENV##*/}%b%F{11})%f %B$(perl -v | sed -e '2!d' -e 's/.*v\([5-6]\.[0-9]\{2\}\.[0-9]*\).*/\1/')%b "
 
 	# Set prompt
-	PS1="${PS_EXIT} ${PS_VENV}${PS_PENV}%F{11}»%f "
+	PS1="${PS_EXIT}${PS_VENV}${PS_PENV}%B${PS_USER}@${PS_MACH}%b${PS_PWD}+ "
+	RPROMPT="${vcs_info_msg_0_}"
 	
 	# This *would* make more sense in chpwd(), but that causes the old title to
 	# stick around after being set by an application
@@ -51,5 +51,7 @@ precmd() {
 			print -Pn "\e]0;%n@%m: %~\a" ;;
 	esac
 }
+
+export SPROMPT="Correct %B%F{1}%R%f%b to %B%F{2}%r%f%b? (Yes, No, Abort, Edit) "
 	
 

@@ -1,7 +1,7 @@
 if (( $+ZSH_HIGHLIGHT_HIGHLIGHTERS )); then
 	debug "configuring zsh-syntax-highlighting"
 
-	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
+	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern root)
 
 	# STYLES
 	# Aliases and functions

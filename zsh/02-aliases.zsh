@@ -31,7 +31,10 @@ alias gp="git push"
 alias gs="git status"
 
 # wrapper scripts
+alias e="emacs_wrapper.sh"
 alias t="tmux_wrapper.sh"
+alias whine="wine_wrapper.sh"
 
 # randoms
+alias _="sudo"
 alias rs="(redshift -l 3:101 -b0.7 -t 5500:4700&)"

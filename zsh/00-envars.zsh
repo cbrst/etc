@@ -7,6 +7,7 @@ path_dirs=(
 	${BIN_HOME}
 	${BIN_HOME}/scripts
 	${XDG_DATA_HOME}/node/bin
+	$(cope_path.pl)
 	/usr/local/bin
 	/usr/bin
 	/bin

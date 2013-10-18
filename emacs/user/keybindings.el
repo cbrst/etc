@@ -13,7 +13,15 @@
 ;; M-x is a pain to reach. at least on QWERTZ
 (global-set-key (kbd "C-x x") 'execute-extended-command)
 
-;; evil
-(define-key evil-normal-state-map (kbd "\"") 'paredit-doublequote)
-(define-key evil-normal-state-map (kbd "gg") 'evilnc-comment-or-uncomment-lines)
-(define-key evil-visual-state-map (kbd "gg") 'evilnc-comment-or-uncomment-lines)
+;; EVIL
+
+;; wrap selection
+(define-key evil-visual-state-map (kbd "(")  'insert-pair)
+(define-key evil-visual-state-map (kbd "[")  'insert-pair)
+(define-key evil-visual-state-map (kbd "{")  'insert-pair)
+(define-key evil-visual-state-map (kbd "\"") 'insert-pair)
+(define-key evil-visual-state-map (kbd "\'") 'insert-pair)
+
+;; toggle comments
+(define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
+(define-key evil-visual-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)

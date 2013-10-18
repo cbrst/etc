@@ -64,3 +64,7 @@
 
 ;; Require packages in module dir
 (mapc 'load (directory-files module-dir nil "^[^#].*el$"))
+
+
+;; Start server
+(server-start)

@@ -4,6 +4,7 @@ emacs/ac-comphist.dat
 emacs/auto-save-list
 emacs/elpa
 emacs/tetris-scores
+emacs/tramp
 emacs/url
 fb-client/apikey
 gtk-2.0/

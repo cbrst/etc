@@ -59,19 +59,19 @@ style chrome://* <<EOM
 
 	#TabsToolbar {
 		-moz-appearance: none !important;
-		background-color: #dedede !important;
+		background-color: #151515 !important;
 		background-image: -moz-linear-gradient(top,
-		                                  #dedede 0%,
-																			#dedede 40%,
-                                      #d0d0d0 100%) !important;
-		border-bottom: 1px solid #090909 !important;
+		                                  #151515 0%,
+																			#151515 40%,
+                                      #090909 100%) !important;
+		border-bottom: 1px solid #030303 !important;
 		height: 23px !important;
 	 	font-family: PragmataPro !important;
 		font-size: 9px !important;
 		font-weight: bold !important;
-		color: #151515 !important;
+		color: #d0d0d0 !important;
 		padding-right: 62px !important;
-		box-shadow: inset 0 1px 0 #f1f1f1 !important;
+		box-shadow: inset 0 1px 0 #202020 !important;
 	}
 
 	.tabbrowser-tab, .tabs-newtab-button {
@@ -87,8 +87,14 @@ style chrome://* <<EOM
 	}
 
 	.tabbrowser-tab[selected="true"] {
-		background: transparent !important;
-		color: #151515 !important;
+		background-color: #101010 !important;
+		background-image: -moz-linear-gradient(top,
+		                                  #101010 0%,
+																			#101010 40%,
+                                      #050505 100%) !important;
+		border-left: 1px solid #202020 !important;
+		border-right: 1px solid #202020 !important;
+		color: #f0f0f0 !important;
 		box-shadow: inset 0 0 5px rgba(0,0,0,0.3) !important;
 	}
 	

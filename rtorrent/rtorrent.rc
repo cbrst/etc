@@ -1,8 +1,12 @@
 port_range = 49164-49164
 session = ~/var/rtorrent/session
 
+max_uploads_global = 0
+
 done_fg_color = 2
 active_fg_color = 4
+
+check_hash = no
 
 schedule = tied_directory,10,10,start_tied=
 schedule = untied_directory,10,10,remove_untied=
@@ -17,9 +21,9 @@ schedule = watch_directory_5,10,10,"load_start=/data/Downloads/torrent/_torrents
 schedule = watch_directory_6,10,10,"load_start=/data/Downloads/torrent/_torrents/apps/*.torrent,d.set_custom1=/data/Downloads/torrent/apps"
 schedule = watch_directory_7,10,10,"load_start=/data/Downloads/torrent/_torrents/var/*.torrent,d.set_custom1=/data/Downloads/torrent/var"
 
-system.method.set_key =event.download.finished,move_complete,"d.set_directory=$d.get_custom1= ;execute=mv,-u,$d.get_base_path=,$d.get_custom1="
+system.method.set_key = event.download.finished,move_complete,"d.set_directory=$d.get_custom1= ;execute=mv,-u,$d.get_base_path=,$d.get_custom1="
 
 system.method.insert=checkdirs1,simple,"not=\"$equal={d.get_custom1=,d.get_base_path=}\""
 system.method.insert=movecheck1,simple,"and={checkdirs1=,d.get_complete=,d.get_custom1=}"
 system.method.insert=movedir1,simple,"d.set_directory=$d.get_custom1=;execute=mv,-u,$d.get_base_path=,$d.get_custom1=;d.set_custom1=;d.stop=;d.start="
-system.method.set_key=event.download.hash_done,move_hashed1,"branch={$movecheck1=,movedir1=}"
+# system.method.set_key = event.download.hash_done,move_hashed1,"branch={$movecheck1=,movedir1=}"

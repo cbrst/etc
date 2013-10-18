@@ -7,10 +7,11 @@
         js3-indent-level 3
         js3-indent-dots t
         js3-enter-indents-newline t
-        js3-auto-indent-p t))
+        js3-auto-indent-p t)
+  (smart-tabs-advice js3-indent-line js3-indent-level)
+  (smart-tabs-mode-enable))
 
 (add-hook 'js3-mode-hook 'js3-indentation)
-
 
 ;; js-mode
 (defun js-indentation ()

@@ -3,6 +3,8 @@ compinit
 
 autoload -Uz colors
 
+autoload -U zmc
+
 zmodload zsh/complist
 zmodload zsh/terminfo
 
@@ -10,7 +12,16 @@ HISTFILE=~/var/zsh/histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-setopt appendhistory autocd ksh_glob extendedglob inc_append_history
+# SETOPTS
+# History
+setopt appendhistory inc_append_history share_history
+
+# Globbing
+setopt extendedglob ksh_glob
+
+# Other
+setopt autocd complete_in_word correct
+
 
 # ZLE use Vi
 bindkey -v

@@ -94,18 +94,18 @@ sub cmd_ban {
 	if (($server->ischannel($channel))) {
 		$args =~ s/^[^\s]+\s?//;
 		return unless ($args);
-		unless (($chan = $server->channel_find($channel)) && $chan->{chanop}) {
-			Irssi::print("%R>>%n You are not on $channel or you are not opped.");
-			Irssi::signal_stop();
-			return;
-		}
+		# unless (($chan = $server->channel_find($channel)) && $chan->{chanop}) {
+		# 	Irssi::print("%R>>%n You are not on $channel or you are not opped.");
+		# 	Irssi::signal_stop();
+		# 	return;
+		# }
 	} else {
 		return unless ($args);
-		unless ($winit && $winit->{type} eq "CHANNEL" && $winit->{chanop}) {
-			Irssi::print("%R>>%n You don't have active channel in that window or you are not opped.");
-			Irssi::signal_stop();
-			return;
-		}
+		# unless ($winit && $winit->{type} eq "CHANNEL" && $winit->{chanop}) {
+		# 	Irssi::print("%R>>%n You don't have active channel in that window or you are not opped.");
+		# 	Irssi::signal_stop();
+		# 	return;
+		# }
 		$chan = $winit;
 		$channel = $chan->{name};
 	}

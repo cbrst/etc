@@ -2,9 +2,10 @@
              (concat emacs-dir "themes/"))
 
 ;; (set-face-attribute 'default nil :font "Source Code Pro-7")
-(set-face-attribute 'default nil :font "PragmataPro-7")
+;; (set-face-attribute 'default nil :font "PragmataPro-7")
+(set-face-attribute 'default nil :font "-misc-fixed-medium-r-normal--9-*-*-*-c-*-iso10646-1")
 
-(load-theme 'dotshare t)
+(load-theme 'not_monokai t)
 
 (tool-bar-mode 0)
 (scroll-bar-mode 0)

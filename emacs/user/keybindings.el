@@ -10,8 +10,12 @@
 ;; i don't use fillcolumn
 (global-set-key (kbd "C-x f") 'ido-find-file)
 
-;; M-x is a pain to reach. at least on QWERTZ
+;; M-x is a pain to reach
 (global-set-key (kbd "C-x x") 'execute-extended-command)
+
+;; in/decrement numbers
+(global-set-key (kbd "C-c a") 'evil-numbers/inc-at-pt)
+(global-set-key (kbd "C-c x") 'evil-numbers/dec-at-pt)
 
 ;; EVIL
 
@@ -25,3 +29,4 @@
 ;; toggle comments
 (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
 (define-key evil-visual-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
+

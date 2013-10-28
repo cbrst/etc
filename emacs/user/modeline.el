@@ -29,8 +29,7 @@
 	 "%n"
 	 " "
 	 (which-func-mode ("" which-func-format "-"))
-	 (:propertize " " face mode-line-padder)
-	 (powerline-fill mode-line-padder)
+   " "
 	 (:propertize minor-mode-alist face mode-line-minor-mode-face)
 	 ;; global-mode-string
 	 ))

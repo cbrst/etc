@@ -1,3 +1,17 @@
+;; Custom paths
+(defvar emacs-dir "/home/crshd/etc/emacs/"
+	"top level emacs dir")
+
+(defvar vendor-dir (concat emacs-dir "vendor/")
+	"packages not from ELPA")
+
+(defvar module-dir (concat emacs-dir "user/")
+	"don't enter here. magic!")
+
+(defvar elpa-dir (concat emacs-dir "elpa/")
+  "all elpa stuffs here")
+
+
 ;; ELPA Stuff
 
 (require 'package)
@@ -7,7 +21,9 @@
 (add-to-list 'package-archives
 	     '("melpa"     . "http://melpa.milkbox.net/packages/") t)
 
-(package-initialize)
+;; Check if elpa dir exists, otherwise get archives
+(unless (file-exists-p elpa-dir)
+    (package-refresh-contents))
 
 ;; Make sure these are installed
 (defvar elpa-required-packages '(
@@ -28,6 +44,7 @@
                                  sawfish
                                  smart-tab
                                  smart-tabs-mode
+                                 stumpwm-mode
                                  stylus-mode
                                  sws-mode
                                  undo-tree
@@ -46,15 +63,7 @@
   (when (not (package-installed-p pkg))
     (package-install pkg)))
 
-;; Load vendor and custom files
-(defvar emacs-dir "/home/crshd/etc/emacs/"
-	"top level emacs dir")
-
-(defvar vendor-dir (concat emacs-dir "vendor/")
-	"packages not from ELPA")
-
-(defvar module-dir (concat emacs-dir "user/")
-	"don't enter here. magic!")
+(package-initialize)
 
 
 ;; Add to load path
@@ -64,6 +73,7 @@
 
 ;; Require packages in module dir
 (mapc 'load (directory-files module-dir nil "^[^#].*el$"))
+(mapc 'load (directory-files vendor-dir nil "^[^#].*el$"))
 
 
 ;; Start server

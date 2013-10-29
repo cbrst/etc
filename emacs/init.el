@@ -15,6 +15,8 @@
 ;; ELPA Stuff
 
 (require 'package)
+
+;; Add some repos
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
@@ -25,7 +27,7 @@
 (unless (file-exists-p elpa-dir)
     (package-refresh-contents))
 
-;; Make sure these are installed
+;; Packages I use
 (defvar elpa-required-packages '(
                                  auto-complete
                                  autopair
@@ -59,6 +61,7 @@
                                  evil-paredit)
   "Default Packages")
 
+;; Make sure those are installed
 (dolist (pkg elpa-required-packages)
   (when (not (package-installed-p pkg))
     (package-install pkg)))

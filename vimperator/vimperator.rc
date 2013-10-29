@@ -1,4 +1,4 @@
-colorscheme sawfish
+colorscheme not_monokai
 
 set scrollbars=false
 set status=input,bookmark,location

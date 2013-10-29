@@ -1,0 +1,1 @@
+/home/crshd/bin/bar.sh

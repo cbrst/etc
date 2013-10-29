@@ -23,9 +23,10 @@ zstyle ':vcs_info:git:*' actionformats   "%F{9}(${FMT_REPO}%F{9}) ${FMT_BRANCH} 
 zstyle ':vcs_info:hg:*'  actionformats   "%F{13}(${FMT_REPO}%F{13}) ${FMT_BRANCH} %u%c ${FMT_ACTION}"
 zstyle ':vcs_info:svn:*' actionformats   "%F{14}(${FMT_REPO}%F{14}) ${FMT_BRANCH} %u%c ${FMT_ACTION}"
 
-local PS_USER="%(#.%F{1}.%F{6})%n%f"
+local PS_USER="%(#.%F{2}.%F{1})%n%f"
 local PS_MACH="%F{4}%M%f"
 local PS_PWD="[%B%F{7}%c%f%b]"
+# local PS_PWD="[%B%F{7}%~%f%b]"
 local PS_TTY="%F{4}%y%f"
 local PS_EXIT="%(?..%F{202}%?%f )"
 
@@ -41,8 +42,14 @@ precmd() {
 	[ $PENV_ENV ] && local PS_PENV="%F{11}(venv:%f%B${PENV_ENV##*/}%b%F{11})%f %B$(perl -v | sed -e '2!d' -e 's/.*v\([5-6]\.[0-9]\{2\}\.[0-9]*\).*/\1/')%b "
 
 	# Set prompt
-	PS1="${PS_EXIT}${PS_VENV}${PS_PENV}%B${PS_USER}@${PS_MACH}%b${PS_PWD}+ "
-	RPROMPT="${vcs_info_msg_0_}"
+	LINE_0="${PS_VENV}${PS_PENV}${vcs_info_msg_0_}"
+	LINE_1="${PS_EXIT}${PS_USER}@${PS_MACH}${PS_PWD}+ "
+	PS1=${LINE_0}${LINE_0:+$'\n'}${LINE_1}
+	# RPROMPT="${vcs_info_msg_0_}"
+	
+
+	# If you feel crazy, uncomment this
+	# PS1="+-> $PS_MACH"$'\n'"| +-> $(uname -m)"$'\n'"| | \`-> $(uname -o)"$'\n'"| |   \`-> $(uname -r)"$'\n'"| \`-> $PS_USER"$'\n'"|   +-> $PS_PWD"$'\n'"|   +-> $PS_VENV$PS_PENV"$'\n'"|   \`-> $vcs_info_msg_0_"$'\n'"\`-> "
 	
 	# This *would* make more sense in chpwd(), but that causes the old title to
 	# stick around after being set by an application

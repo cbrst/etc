@@ -7,10 +7,12 @@ cdl() { cd $1; ls }
 # mkdir and cd
 mkcd() { mkdir $1; cd $1 }
 
+# delete empty dirs
+rmemptydir() { rm -d **/*(/^F) }
+
 # take, upload and delete scrot
 tud() { scrot ${1}.png; fb ${1}.png; rm ${1}.png }
 tuds() { scrot -s ${1}.png; fb ${1}.png; rm ${1}.png }
 
-chpwd() {
-	export PATH=${PWD}:${(j_:_)path_dirs}
-}
+# add $PWD to $PATH
+chpwd() { export PATH=${PWD}:${(j_:_)path_dirs} }

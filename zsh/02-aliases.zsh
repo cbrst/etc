@@ -35,6 +35,11 @@ alias e="emacs_wrapper.sh"
 alias t="tmux_wrapper.sh"
 alias whine="wine_wrapper.sh"
 
+# droid stuffs
+alias -g sd0="/storage/sdcard0"
+alias fastboot="sudo fastboot"
+
 # randoms
 alias _="sudo"
 alias rs="(redshift -l 3:101 -b0.7 -t 5500:4700&)"
+alias aria2="aria2c -s 4 --max-connection-per-server=4"

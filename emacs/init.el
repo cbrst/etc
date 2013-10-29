@@ -1,5 +1,5 @@
 ;; Custom paths
-(defvar emacs-dir "/home/crshd/etc/emacs/"
+(defvar emacs-dir (concat (getenv "XDG_CONFIG_HOME") "emacs/")
 	"top level emacs dir")
 
 (defvar vendor-dir (concat emacs-dir "vendor/")

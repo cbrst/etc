@@ -1,4 +1,7 @@
 .openoffice/
+cache
+common-lisp
+darktable
 easytag
 emacs/ac-comphist.dat
 emacs/auto-save-list
@@ -12,7 +15,11 @@ gtk-3.0
 herbstluftwm/
 irssi/away.log
 ncmpcpp/error.log
+spacefm
+stumpwm/storage
+tint2
 vimperator/info
 vili/
 xmonad/*
 !xmonad/xmonad.hs
+zsh/.zcompdump

@@ -231,53 +231,57 @@ abstracts = {
 
 formats = {
   "fe-common/core" = {
-    line_start = "{line_start}";
-    line_start_irssi = "{line_start}";
+    line_start             = "{line_start}";
+    line_start_irssi       = "{line_start}";
 
-    join = "%G>%K>       join %g>%n {channick $0}";
-    part = "%R<%K<       part %r<%n {channick $0}";
-    kick = "%R<%K<     kicked %r<%n {channick $0}";
-    quit = "%R<%K<       quit %r<%n {channick $0}";
-    quit_once = "{channel $3} {channick $0} {chanhost $1} %kquit {reason %C$2}";
+    join                   = "%G>%K>       join %g>%n {channick $0}";
+    part                   = "%R<%K<       part %r<%n {channick $0}";
+    kick                   = "%R<%K<     kicked %r<%n {channick $0}";
+    quit                   = "%R<%K<       quit %r<%n {channick $0}";
+    quit_once              = "{channel $3} {channick $0} {chanhost $1} %kquit {reason %C$2}";
 
-    nick_changed = "%K{channick $[-13]0} %G>%n {channick $1}";
-    your_nick_changed = "%K          you %G>%n {channick $1}";
+    nick_changed           = "%K{channick $[-13]0} %G>%n {channick $1}";
+    your_nick_changed      = "%K          you %G>%n {channick $1}";
 
-    pubmsg = "{pubmsgnick $2 {pubnick \00302$[-11]0}}$1";
+    pubmsg                 = "{pubmsgnick $2 {pubnick \00302$[-11]0}}$1";
 
-    own_msg = "{ownmsgnick $2 {ownnick $[-11]0}}$1";
-    own_msg_channel = "{ownmsgnick $3 {ownnick $[-11]0}{msgchannel $1}}$2";
-    own_msg_private_query = "{ownprivmsgnick {ownprivnick $[-11]2}}$1";
+    own_msg                = "{ownmsgnick $2 {ownnick $[-11]0}}$1";
+    own_msg_channel        = "{ownmsgnick $3 {ownnick $[-11]0}{msgchannel $1}}$2";
+    own_msg_private_query  = "{ownprivmsgnick {ownprivnick $[-11]2}}$1";
 
-    pubmsg_me = "{pubmsghinick $2 {menick $[-11]0}}$1";
-    pubmsg_me_channel = "{pubmsghinick $3 {menick $[-11]0}{msgchannel $1}}$2";
+    pubmsg_me              = "{pubmsghinick $2 {menick $[-11]0}}$1";
+    pubmsg_me_channel      = "{pubmsghinick $3 {menick $[-11]0}{msgchannel $1}}$2";
 
-    pubmsg_hilight = "{pubmsghinick $3 {menick $[-11]1}}$2";
+    pubmsg_hilight         = "{pubmsghinick $3 {menick $[-11]1}}$2";
     pubmsg_hilight_channel = "{pubmsghinick $0 $[-11]1$4{msgchannel $2}}$3";
 
-    pubmsg_channel = "{pubmsgnick {pubnick %G$[-11]0}$2}$1";
-    msg_private_query = "{privmsgnick $[-11]0}$2";
-    new_topic = "        %ctopic %K= %|%B'$2' %non %b$1%n%K[set by {nick %y$0}]";
+    pubmsg_channel         = "{pubmsgnick {pubnick %G$[-11]0}$2}$1";
+    msg_private_query      = "{privmsgnick $[-11]0}$2";
+    new_topic              = "        %ctopic %K= %|%B'$2'%n %K[{nick %y$0}]";
 
-    endofnames = "%Y!%K!      names %Y!%m Total: {hilight $2} ops, {hilight $3} halfops, {hilight $4} voices, {hilight $5} normal%n";
+    endofnames             = "%Y!%K!      names %Y!%r [{hilight $2}] [{hilight $3}] [{hilight $4}] [{hilight $5}]%n";
   };
+
   "fe-common/irc" = {
-    chanmode_change = "%Y!%K!       mode %y!%n {channick $1}";
+    chanmode_change        = "%Y!%K!       mode %y!%n {channick $1}";
     server_chanmode_change = "%Y!%K!       mode %y!%n {channick $1}";
 
-    own_action = "{ownaction $[-11]0} $1";
-    action_private = "{pvtaction $[-11]0}$1";
-    action_private_query = "{pvtaction_query $[-11]0} $2";
-    action_public = "{pubaction $[-11]0}$1";
+    own_action             = "{ownaction $[-11]0} $1";
+    action_private         = "{pvtaction $[-11]0}$1";
+    action_private_query   = "{pvtaction_query $[-11]0} $2";
+    action_public          = "{pubaction $[-11]0}$1";
 
-    ctcp_reply = "%M!%K!       CTCP %m!%n $0 reply from $1: $2";
-    ctcp_reply_channel = "%M!%K!       CTCP %m!%n $0 reply from $1 in $3: $2";
-    ctcp_ping_reply = "%M!%K!       CTCP %m!%n {hilight PING} reply from $0: $1.$[-3.0]2 seconds";
-    ctcp_requested = "%M!%K!       CTCP %m!%n $0 requested $2 from {nick $4}: $3";
+    ctcp_reply             = "%M!%K!       CTCP %m!%n $0 reply from $1: $2";
+    ctcp_reply_channel     = "%M!%K!       CTCP %m!%n $0 reply from $1 in $3: $2";
+    ctcp_ping_reply        = "%M!%K!       CTCP %m!%n {hilight PING} reply from $0: $1.$[-3.0]2 seconds";
+    ctcp_requested         = "%M!%K!       CTCP %m!%n $0 requested $2 from {nick $4}: $3";
     ctcp_requested_unknowm = "%M!%K!       CTCP %m!%n $0 requested unknown $2 from {nick $4}: $3";
 
-    channel_synced = "channel $0 was synced in $1 secs";
-    channel_created = "%M!%K!     channel %m!%n {channel $0} created {hilight $1}";
+    channel_synced         = "channel $0 was synced in $1 secs";
+    channel_created        = "%M!%K!     channel %m!%n {channel $0} created {hilight $1}";
   };
-  "Irssi::Script::ichat" = { ichat_timestamp = "%Y>%K>      $1 %y>%n"; };
+
+  "Irssi::Script::ichat" = {
+    ichat_timestamp        = "%Y>%K>      $1 %y>%n"; 
+  };
 };

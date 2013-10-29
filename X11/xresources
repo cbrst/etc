@@ -6,12 +6,10 @@ Xft.antialias: 1
 Xft.rgba: rgb
 Xft.dpi: 96
 
-! urxvt*font: -jmk-neep-medium-r-semicondensed--11-100-75-75-c-50-iso8859-1
-! urxvt*font: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
-! urxvt*boldFont: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
+! urxvt*font: xft:PragmataPro:size=7,xft:Kochi Gothic:size=7
 
-!urxvt*font: xft:Source Code Pro:size=6.8
-urxvt*font: xft:PragmataPro:size=7,xft:Kochi Gothic:size=7
+urxvt*font:     -misc-fixed-medium-r-normal--9-*-*-*-c-*-iso10646-1
+urxvt*boldFont: -jmk-neep-bold-r-normal--11-100-75-75-c-60-iso8859-1
 
 urxvt.scrollBar: false
 
@@ -25,8 +23,3 @@ urxvt.keysym.M-u: perl:url-select:select_next
 
 urxvt.url-launcher: /usr/bin/firefox-bin
 urxvt.url-select.launcher: /usr/bin/firefox-bin
-
-
-! emacs*font: -jmk-neep-medium-r-normal--10-80-75-75-c-50-iso8859-1
-! emacs*font: xft:Source Code Pro:size=7
-

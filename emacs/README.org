@@ -17,4 +17,8 @@ Finally, we auto-load =^[^#].*el$= from =user=, which are all of my custom .el f
 
 ** Submodules
 
-I'm using my personal fork of evil-plugins in this configuration. It's included as a git submodule. So don't forget to =git submodule init=
+I'm using my personal fork of evil-plugins in this configuration. It's included as a git submodule. So don't forget to
+#+BEGIN_SRC
+git submodule init
+git submodule pull
+#+END_SRC

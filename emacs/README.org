@@ -14,3 +14,7 @@ All of my custom configurations go into =user=, all (more or less) neatly groupe
 
 Finally, we auto-load =^[^#].*el$= from =user=, which are all of my custom .el files in the =user= directory.
 
+
+** Submodules
+
+I'm using my personal fork of evil-plugins in this configuration. It's included as a git submodule. So don't forget to ```git submodule init```

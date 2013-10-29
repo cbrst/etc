@@ -1,0 +1,3 @@
+[submodule "evil-plugins"]
+	path = evil-plugins
+	url = /home/crshd/etc/emacs/vendor/evil-plugins

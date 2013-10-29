@@ -1,3 +1,12 @@
 [submodule "emacs/vendor/evil-plugins"]
 	path = emacs/vendor/evil-plugins
 	url = https://github.com/crshd/evil-plugins
+[submodule "zsh/modules/zaw"]
+	path = zsh/modules/zaw
+	url = https://github.com/zsh-users/zaw.git
+[submodule "zsh/modules/zsh-history-substring-search"]
+	path = zsh/modules/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "zsh/modules/zsh-syntax-highlighting"]
+	path = zsh/modules/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

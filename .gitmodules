@@ -1,3 +1,6 @@
 [submodule "evil-plugins"]
 	path = evil-plugins
 	url = /home/crshd/etc/emacs/vendor/evil-plugins
+[submodule "emacs/vendor/evil-plugins"]
+	path = emacs/vendor/evil-plugins
+	url = https://github.com/crshd/evil-plugins

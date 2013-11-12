@@ -8,3 +8,7 @@
 	      tab-width 3))
 
 (add-hook 'sh-mode-hook 'sh-indentation)
+
+;; This is annoying. I use <<< a lot.
+(add-hook 'sh-mode-hook (lambda ()
+                          (sh-electric-here-document-mode -1)))

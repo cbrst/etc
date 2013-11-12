@@ -1494,3 +1494,6 @@ box-shadow: none !important;
 
 }
 EOM
+
+" disabled by default
+styledisable -name=darkutube

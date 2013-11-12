@@ -7,13 +7,14 @@ Xft.rgba: rgb
 Xft.dpi: 96
 
 ! urxvt*font: xft:PragmataPro:size=7,xft:Kochi Gothic:size=7
+! urxvt*boldFont: xft:PragmataPro:style=Bold:size=7,xft:Kochi Gothic:size=7
 
-urxvt*font:     -misc-fixed-medium-r-normal--9-*-*-*-c-*-iso10646-1
-urxvt*boldFont: -jmk-neep-bold-r-normal--11-100-75-75-c-60-iso8859-1
+*font:     -misc-fixed-medium-r-normal--9-*-*-*-c-*-iso10646-1
+*boldFont: -jmk-neep-bold-r-normal--11-100-75-75-c-60-iso8859-1
 
-urxvt.scrollBar: false
+*scrollBar: false
 
-urxvt.perl-ext-common: default,matcher,keyboard-select,url-select
+*perl-ext-common: default,matcher,keyboard-select,url-select
 
 urxvt.matcher-button: 2
 

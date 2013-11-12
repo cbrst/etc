@@ -26,6 +26,14 @@
 (define-key evil-visual-state-map (kbd "\"") 'insert-pair)
 (define-key evil-visual-state-map (kbd "\'") 'insert-pair)
 
+;; wrap word
+(defun wrap-word ()
+  "Wrap the word under the pointer"
+  (interactive) (evil-backward-word-begin) (mark-word) (insert-pair))
+
+(define-key evil-normal-state-map (kbd "\"") 'wrap-word)
+(define-key evil-normal-state-map (kbd "\'") 'wrap-word)
+
 ;; toggle comments
 (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
 (define-key evil-visual-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)

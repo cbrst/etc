@@ -279,6 +279,7 @@ statusbar = {
       disabled = "yes";
     };
     add = { disabled = "yes"; };
+    line = { items = { filline = { }; }; disabled = "yes"; };
   };
 };
 settings = {
@@ -293,6 +294,7 @@ settings = {
   "perl/core/scripts" = {
     hilight_log_path = "/home/crshd/var/log/irc/hilight.log";
     mpd_format = "\\00303[\\00301♫\\00303] \\00305%ARTIST\\003 - \\00302%TITLE";
+    statusbar_fill_string = "=-";
   };
 };
 logs = {

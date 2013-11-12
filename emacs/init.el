@@ -1,5 +1,5 @@
 ;; Custom paths
-(defvar emacs-dir (concat (getenv "XDG_CONFIG_HOME") "emacs/")
+(defvar emacs-dir (concat (getenv "XDG_CONFIG_HOME") "/emacs/")
 	"top level emacs dir")
 
 (defvar vendor-dir (concat emacs-dir "vendor/")
@@ -26,6 +26,8 @@
 ;; Check if elpa dir exists, otherwise get archives
 (unless (file-exists-p elpa-dir)
     (package-refresh-contents))
+
+(package-initialize)
 
 ;; Packages I use
 (defvar elpa-required-packages '(
@@ -65,8 +67,6 @@
 (dolist (pkg elpa-required-packages)
   (when (not (package-installed-p pkg))
     (package-install pkg)))
-
-(package-initialize)
 
 
 ;; Add to load path

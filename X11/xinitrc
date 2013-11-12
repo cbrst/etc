@@ -8,7 +8,7 @@ sysmodmap=/etc/X11/xinit/Xmodmap
 
 # composite=$XDG_CONFIG_HOME/X11/compton.conf
 
-colortheme=$XDG_CONFIG_HOME/X11/colors/crshd_not-monokai
+colortheme=$XDG_CONFIG_HOME/X11/colors/crshd_erosion_increased_saturation
 
 # merge in defaults and keymaps
 
@@ -57,4 +57,5 @@ fi
 feh --bg-fill ~/var/wallpaper/current
 
 # exec sawfish
-exec ~/tmp/stumpwm/stumpwm
+# exec ~/tmp/stumpwm/stumpwm
+exec herbstluftwm -c ~/etc/herbstluftwm/autostart

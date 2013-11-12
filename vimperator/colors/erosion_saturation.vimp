@@ -1,0 +1,86 @@
+hi Normal background: #181512; color: #BEA492; font-family: Fixed; font-size: 9px
+hi CmdLine background: #181512; color: #BEA492; transition: all 0.25s
+hi CmdLine>* font-family: Fixed; font-size: 9px
+hi StatusLine background: transparent; color: #BEA492; font-family: Fixed; font-size: 9px
+hi ContentSeparator border-top: 0 
+
+
+hi CompItem[selected] background: #D2C984; color: #584231
+hi CompTitle background: #B16E43; font-weight: bold
+hi CompTitle>* border-top: 1px solid #9B5E3B; border-bottom: 2px solid #B16E43; color: #BEA492; padding: 4px 0 0 4px
+
+hi Indicator color: #374A4D
+hi NonText color: #374A4D
+hi Null color: #374A4D
+hi Number color: #374A4D
+
+hi Disabled color: #9B5E3B
+hi Enabled color: #D2C984
+hi ErrorMsg background: #9B5E3B; color: #BEA492
+hi Filter border-radius: 2px; background: #CAC286; border: 1px solid #FFFFB4; color: #181512
+hi Function color: #374A4D
+
+hi HelpArg color: #D2C984
+hi HelpBody -append background: #181512; color: #BEA492
+hi HelpHead -append border-color: #6E6774; color: #756D7E
+hi HelpKey color: #D2C984
+hi HelpLink color: #626B6F
+hi HelpOptionalArg color: #374A4D
+hi HelpSpec -append color: #6E6774
+hi HelpSubhead -append border-color: #425052; color: #374A4D
+hi HelpSubsubhead -append border-color: #425052; color: #374A4D
+
+hi Hint font-family: Fixed; font-size: 11px; font-weight: bold; color: #181512; background: #9B5E3B
+hi HintActive background: rgba(210,201,132,0.2)
+hi HintElem background: rgba(202,194,134,0.2)
+
+hi InfoMsg color: #6E6774
+hi Keyword color: #9B5E3B
+hi LineNr color: #FFFFB4
+hi Mapping color: #6E6774
+hi ModeMsg color: #BEA492; background: #CDD26A
+hi MoreMsg background: #BEA492; color: #CDD26A
+hi Object color: #626B6F
+hi PromptText color: #BEA492; background: #756D7E
+hi Question color: #BEA492; background: #D2C984; font-weight: bold
+hi String color: #D2C984
+hi Tag color: #626B6F
+hi Title color: #6E6774
+hi URL color: #CDD26A
+hi WarningMsg color: #B16E43
+
+
+
+style chrome://* <<EOM
+
+	#navigator-toolbox {
+		border-bottom: none !important;
+	}
+
+	#TabsToolbar {
+		-moz-appearance: none !important;
+		background: #181512 !important;
+		height: 18px !important;
+	 	font-family: Fixed !important;
+		font-size: 9px !important;
+		font-weight: bold !important;
+		color: #BEA492 !important;
+	}
+
+	.tabbrowser-tab, .tabs-newtab-button {
+		-moz-appearance: none !important;
+		background: #231F1A !important;
+		border: none !important;
+		border-radius: 0px !important;
+		min-height: 18px !important;
+		max-height: 18px !important;
+		text-align: center !important;
+		margin: 0 3px !important;
+	}
+
+	.tabbrowser-tab[selected="true"] { background: #374A4D !important; color: #BEA492 !important }
+	
+	.toolbarbutton-text { color: #FFFFB4 !important }
+	.toolbarbutton-menu-dropmarker, .tab-icon-image, .tab-close-button { display: none !important }
+EOM
+

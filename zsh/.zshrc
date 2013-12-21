@@ -26,6 +26,21 @@ setopt autocd complete_in_word correct
 # ZLE use Vi
 bindkey -v
 
+# This is already in zshenv, why doesn't it work?
+path_dirs=(
+	${BIN_HOME}
+	${BIN_HOME}/scripts
+	${XDG_DATA_HOME}/node/bin
+	$(cope_path.pl)
+	/usr/local/bin
+	/usr/bin
+	/bin
+	/opt/bin
+	/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4
+	/usr/games/bin
+)
+export PATH=${(j_:_)path_dirs}
+
 # Debug mode
 DEBUG=0
 function debug {

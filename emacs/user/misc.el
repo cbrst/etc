@@ -27,11 +27,15 @@
 ;; save tetris score here
 (setq tetris-score-file "~/etc/emacs/tetris-scores")
 
-;; do as I do, not as I say
-(ido-mode t)
-
 ;; i'm too lazy to type 2-3 characters
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; enable autopair mode globally.
+;; enable some modes
+(ido-mode t)
 (autopair-mode 1)
+(show-paren-mode 1)
+
+(defadvice server-done (before save-before-server-done activate)
+  "Automatically save buffer when done."
+  (when (buffer-modified-p)
+    (save-buffer)))

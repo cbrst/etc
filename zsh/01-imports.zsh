@@ -4,7 +4,7 @@ if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
 fi
 
 # Load external modules if they exist
-MODDIR=$ZSHDIR/modules/
+MODDIR=$ZDOTDIR/modules/
 function ifload {
 	for f in "$@"; do
 		# Standard naming for zsh-users modules: <module>/<module>.zsh

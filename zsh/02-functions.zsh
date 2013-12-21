@@ -15,4 +15,5 @@ tud() { scrot ${1}.png; fb ${1}.png; rm ${1}.png }
 tuds() { scrot -s ${1}.png; fb ${1}.png; rm ${1}.png }
 
 # add $PWD to $PATH
-chpwd() { export PATH=${PWD}:${(j_:_)path_dirs} }
+# This breaks virtualenv
+# chpwd() { export PATH=${PWD}:${(j_:_)path_dirs} }

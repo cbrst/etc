@@ -17,6 +17,27 @@
 (global-set-key (kbd "C-c a") 'evil-numbers/inc-at-pt)
 (global-set-key (kbd "C-c x") 'evil-numbers/dec-at-pt)
 
+;; Magit keybindings
+(global-set-key (kbd "C-c g") 'magit-status)
+
+;; reindent buffer
+(global-set-key (kbd "C-c i") 'indent-buffer)
+
+;; expand-region
+(global-set-key (kbd "C-+") 'er/expand-region)
+(global-set-key (kbd "C--") 'er/contract-region)
+
+;; ace-jump
+(global-set-key (kbd "C-c f w") 'ace-jump-word-mode)
+(global-set-key (kbd "C-c f c") 'ace-jump-char-mode)
+(global-set-key (kbd "C-c f l") 'ace-jump-line-mode)
+
+(global-set-key (kbd "C-<up>") 'move-text-up)
+(global-set-key (kbd "C-<down>") 'move-text-down)
+
+(global-set-key (kbd "M-[") 'backward-paragraph)
+(global-set-key (kbd "M-]") 'forward-paragraph)
+
 ;; EVIL
 
 ;; wrap selection
@@ -38,3 +59,5 @@
 (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
 (define-key evil-visual-state-map (kbd "gc") 'evilnc-comment-or-uncomment-lines)
 
+;; string-rectangle from visual mode
+(define-key evil-visual-state-map (kbd "r") 'string-rectangle)

@@ -1,13 +1,15 @@
-colorscheme not_monokai
+colorscheme windowmaker
 
 set scrollbars=false
 set status=input,bookmark,location
+
+set editor="~/bin/scripts/emacs_wrapper.sh -w"
 
 set complete=lfS
 
 let g:smooziee_scroll_amount="150"
 
-let mapleader = ","
+let mapleader=","
 
 " git.io url shortener
 nmap <silent> <Leader>io :javascript util.copyToClipboard(userContext.gitio());<CR>

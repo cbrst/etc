@@ -6,9 +6,10 @@ usermodmap=$HOME/etc/X11/modmap
 sysresources=/etc/X11/xinit/Xresources
 sysmodmap=/etc/X11/xinit/Xmodmap
 
-# composite=$XDG_CONFIG_HOME/X11/compton.conf
+composite=$XDG_CONFIG_HOME/X11/compton.conf
 
-colortheme=$XDG_CONFIG_HOME/X11/colors/crshd_erosion_increased_saturation
+colortheme=$XDG_CONFIG_HOME/X11/colortheme
+
 
 # merge in defaults and keymaps
 
@@ -56,6 +57,4 @@ fi
 
 feh --bg-fill ~/var/wallpaper/current
 
-# exec sawfish
-# exec ~/tmp/stumpwm/stumpwm
-exec herbstluftwm -c ~/etc/herbstluftwm/autostart
+exec sawfish

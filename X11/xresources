@@ -6,21 +6,21 @@ Xft.antialias: 1
 Xft.rgba: rgb
 Xft.dpi: 96
 
-! urxvt*font: xft:PragmataPro:size=7,xft:Kochi Gothic:size=7
-! urxvt*boldFont: xft:PragmataPro:style=Bold:size=7,xft:Kochi Gothic:size=7
+URxvt*font: xft:PragmataPro:size=7,xft:Kochi Gothic:size=7
+URxvt*boldFont: xft:PragmataPro:style=Bold:size=7,xft:Kochi Gothic:size=7
 
-*font:     -misc-fixed-medium-r-normal--9-*-*-*-c-*-iso10646-1
-*boldFont: -jmk-neep-bold-r-normal--11-100-75-75-c-60-iso8859-1
+! *font:     -misc-fixed-medium-r-normal--9-*-*-*-c-*-iso10646-1
+! *boldFont: -jmk-neep-bold-r-normal--11-100-75-75-c-60-iso8859-1
 
 *scrollBar: false
 
 *perl-ext-common: default,matcher,keyboard-select,url-select
 
-urxvt.matcher-button: 2
+*matcher-button: 2
 
-urxvt.keysym.M-Escape: perl:keyboard-select:activate
-urxvt.keysym.M-s: perl:keyboard-select:search
-urxvt.keysym.M-u: perl:url-select:select_next
+*keysym.M-Escape: perl:keyboard-select:activate
+*keysym.M-s: perl:keyboard-select:search
+*keysym.M-u: perl:url-select:select_next
 
-urxvt.url-launcher: /usr/bin/firefox-bin
-urxvt.url-select.launcher: /usr/bin/firefox-bin
+*url-launcher: /usr/bin/firefox-bin
+*url-select.launcher: /usr/bin/firefox-bin

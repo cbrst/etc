@@ -104,6 +104,78 @@ a[title="Post Reply"], a[title="Thread Closed"] {
 		border: none !important;
 }
 
+blockquote {
+		background: transparent !important;
+		border: none !important;
+		color: #ff9f94 !important;
+    background:
+        linear-gradient(135deg, rgb(45,46,46) 2px, transparent 0) 0 5px,
+        linear-gradient(135deg, #ff9f94 3px, transparent 0) 0 5px,
+        linear-gradient(45deg, rgb(45,46,46) 2px, transparent 0) 0 5px,
+        linear-gradient(45deg, #ff9f94 3px, rgb(45,46,46) 0) 0 5px !important;
+    background-color: transparent !important;
+    background-position: left top !important;
+    background-repeat: repeat-y !important;
+    background-size: 10px 10px !important;
+		padding: 0 0 0 10px !important;
+}
+
+blockquote blockquote {
+		color: #e2ffc7 !important;
+    background:
+        linear-gradient(135deg, rgb(45,46,46) 2px, transparent 0) 0 5px,
+        linear-gradient(135deg, #e2ffc7 3px, transparent 0) 0 5px,
+        linear-gradient(45deg, rgb(45,46,46) 2px, transparent 0) 0 5px,
+        linear-gradient(45deg, #e2ffc7 3px, rgb(45,46,46) 0) 0 5px !important;
+    background-color: transparent !important;
+    background-position: left top !important;
+    background-repeat: repeat-y !important;
+    background-size: 10px 10px !important;
+}
+
+blockquote blockquote blockquote {
+		color: #ffffb8 !important;
+    background:
+        linear-gradient(135deg, rgb(45,46,46) 2px, transparent 0) 0 5px,
+        linear-gradient(135deg, #ffffb8 3px, transparent 0) 0 5px,
+        linear-gradient(45deg, rgb(45,46,46) 2px, transparent 0) 0 5px,
+        linear-gradient(45deg, #ffffb8 3px, rgb(45,46,46) 0) 0 5px !important;
+    background-color: transparent !important;
+    background-position: left top !important;
+    background-repeat: repeat-y !important;
+    background-size: 10px 10px !important;
+}
+
+blockquote blockquote blockquote blockquote {
+		color: #a9cfea !important;
+    background:
+        linear-gradient(135deg, rgb(45,46,46) 2px, transparent 0) 0 5px,
+        linear-gradient(135deg, #a9cfea 3px, transparent 0) 0 5px,
+        linear-gradient(45deg, rgb(45,46,46) 2px, transparent 0) 0 5px,
+        linear-gradient(45deg, #a9cfea 3px, rgb(45,46,46) 0) 0 5px !important;
+    background-color: transparent !important;
+    background-position: left top !important;
+    background-repeat: repeat-y !important;
+    background-size: 10px 10px !important;
+}
+
+blockquote blockquote blockquote blockquote blockquote {
+		color: #e2b6cd !important;
+    background:
+        linear-gradient(135deg, rgb(45,46,46) 2px, transparent 0) 0 5px,
+        linear-gradient(135deg, #e2b6cd 3px, transparent 0) 0 5px,
+        linear-gradient(45deg, rgb(45,46,46) 2px, transparent 0) 0 5px,
+        linear-gradient(45deg, #e2b6cd 3px, rgb(45,46,46) 0) 0 5px !important;
+    background-color: transparent !important;
+    background-position: left top !important;
+    background-repeat: repeat-y !important;
+    background-size: 10px 10px !important;
+}
+
+blockquote cite {
+		border-bottom: 1px solid rgb(86,86,86) !important;
+}
+
 hr {
 		background-color: rgb(34,34,34) !important;
 }

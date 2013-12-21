@@ -11,11 +11,12 @@ alias mkdir="mkdir -p"
 alias rm="rm -r"
 
 # Coreutils stuff
-alias ls="ls --color=auto"
+alias ls="ls --color=auto --group-directories-first"
 alias l="ls"
 alias la="ls -a"
 alias ll="ls -lh"
 alias lla="ls -lah"
+alias df="df -h"
 
 # Why doesn't autocd do this?
 alias -- -="cd -"
@@ -43,3 +44,7 @@ alias fastboot="sudo fastboot"
 alias _="sudo"
 alias rs="(redshift -l 3:101 -b0.7 -t 5500:4700&)"
 alias aria2="aria2c -s 4 --max-connection-per-server=4"
+alias hc="herbstclient"
+
+# overwrite shell builtins
+alias time="/usr/bin/time"

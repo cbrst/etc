@@ -31,9 +31,12 @@
 
 ;; Packages I use
 (defvar elpa-required-packages '(
+                                 ace-jump-mode
                                  auto-complete
                                  autopair
+                                 expand-region
                                  evil
+                                 fetch
                                  haml-mode
                                  haskell-mode
                                  js3-mode
@@ -48,7 +51,6 @@
                                  sawfish
                                  smart-tab
                                  smart-tabs-mode
-                                 stumpwm-mode
                                  stylus-mode
                                  sws-mode
                                  undo-tree

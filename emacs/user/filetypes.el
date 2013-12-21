@@ -7,9 +7,8 @@
 ;; emacs doesn't know about these by default.
 (setq auto-mode-alist
       (nconc
+       '((".sawfishrc" . lisp-mode))
        '((".hamd"      . haml-mode))
-       '((".sawfishrc" . sawfish-mode))
-       '((".jl"        . sawfish-mode))
        '((".zsh"       . sh-mode))
        auto-mode-alist))
 

@@ -1,0 +1,471 @@
+# default foreground color (%N) - -1 is the "default terminal color"
+default_color = "-1";
+
+# print timestamp/servertag at the end of line, not at beginning
+info_eol = "false";
+
+# these characters are automatically replaced with specified color
+# (dark grey by default)
+replaces = { "[]" = "%g$*%n"; };
+
+abstracts = {
+
+	############# generic ###############################
+
+	indent_default = "               + ";
+
+	# text to insert at the beginning of each non-message line
+	# line_start = "%g//%n ";
+	line_start = "             ";
+
+	# timestamp styling, nothing by default
+	timestamp = "%K$0-%n";
+
+	# any kind of text that needs hilighting, default is to bold
+	hilight = "%_$*%_";
+
+	# any kind of error message, default is bright red
+	error = "%R$*%n";
+
+	# channel name is printed
+	channel = "%b$*%n";
+
+	# nick is printed
+	nick = "%_$*%_";
+
+	# nick host is printed
+	nickhost = "%g$*";
+
+	# server name is printed
+	server = "%_$*%_";
+
+	# some kind of comment is printed
+	comment = "%n(%b\"$*\"%n);";
+
+	# reason for something is printed (part, quit, kick, ..)
+	reason = "{comment $*}";
+
+	# mode change is printed ([+o nick])
+	mode = "%G$0%n %Y$1%n";
+
+	## channel specific messages
+
+	# highlighted nick/host is printed (joins)
+	channick_hilight = "%g$*%N";
+	chanhost_hilight = "{nickhost $*}";
+
+	# nick/host is printed (parts, quits, etc.)
+	channick = "$*";
+	chanhost = "{nickhost $*}";
+
+	# highlighted channel name is printed
+	channelhilight = "%g$*%n";
+
+	# ban/ban exception/invite list mask is printed
+	ban = "$*";
+
+	########### messages #################################
+
+	# the basic styling of how to print message, $0 = nick mode, $1 = nick
+	# msgnick = "$1-$0%K·%N %|";
+	msgnick = "%K$0%N $1 %K│ %|%N";
+	# msgnick = "%K$0%N $1 %K· %|%N";
+
+	# $0 = nick mode, $1 = nick
+	# ownmsgnick = "{msgnick $0 $1}";
+	ownmsgnick = "%K$0%N $1 %K║ %|%N";
+	ownnick = "%Y$*%n";
+
+	# public message in channel, $0 = nick mode, $1 = nick
+	pubmsgnick = "{msgnick $0 $1}";
+	pubnick = "%N$*%n";
+
+	# public highlighted message in channel
+	pubmsghinick = "{msgnick $0 $1}%r";
+	menick = "%R$*%n";
+
+	# channel name is printed with message
+	msgchannel = "%K:%m$*%n";
+
+	# private message, $0 = nick, $1 = host
+	privmsg = "$0=%b\"$1-\"%n ";
+
+	# private message from you, $0 = "msg", $1 = target nick
+	ownprivmsg = "$0=%b\"$1-\"%n ";
+
+	# private message in query
+	# privmsgnick = "{msgnick $*}";
+	privmsgnick = "%g<%N %|";
+
+	# own private message in query
+	#ownprivmsgnick = "{privmsgnick $*}";
+	ownprivmsgnick = "%r>%N %|";
+	#ownprivnick = "$*";
+
+
+	########## Actions (/ME stuff) #########################
+
+	# generic one that's used by most actions
+	action = "  %m$* %M* %m%|";
+
+	# own action, both private/public
+	# ownaction = "{action $*}";
+	ownaction = "  %m$* %M*%N%m";
+
+	# own action with target, both private/public
+	ownaction_target = "{action $*}";
+
+	# private action sent by others
+	pvtaction = "{action $*}";
+	pvtaction_query = "{action $*}";
+
+	# public action sent by others
+	pubaction = "{action $*}";
+
+
+	########## other IRC events #############################
+
+	# whois
+	whois = "%#    $[8]0 = $1-;";
+
+	# notices
+	ownnotice = "%NNote n = %Mnew%n $0 ($1-) ";
+	notice = "%M$*%n ";
+	pubnotice_channel = " %N($*)";
+	pvtnotice_host = " %N($*)";
+	servernotice = " %N($*)";
+
+	# CTCPs
+	ownctcp = "%NCTCP c = %Mnew%n $0 ($1-) ";
+	ctcp = "%N$*%n";
+
+	# wallops
+	wallop = "%K$*%n: ";
+	wallop_nick = "%n$*";
+	wallop_action = "%K * $*%n ";
+
+	# netsplits
+	netsplit = "       %Knsplit %R< %b\"$*\"%n";
+	netjoin = "        %Knjoin %G> %b\"$*\"%n";
+
+	# /names list
+	names_prefix = "%Y!%K!      names %Y!%n ";
+	names_nick = "%_$2$0%_%n$1- ";
+	names_nick_op = "{names_nick $* %R}";
+	names_nick_halfop = "{names_nick $* %C}";
+	names_nick_voice = "{names_nick $* %K}";
+	names_users = "%Y!%K!      names %Y!%n $1";
+	names_channel = "\"%b$*\"%n";
+
+	# DCC
+	dcc = "%g$*%n";
+	dccfile = "%_$*%_";
+
+	# DCC chat, own msg/action
+	dccownmsg = "%g /* $0 ($1-) */";
+	dccownnick = "$*%n";
+	dccownquerynick = "$*%n";
+	dccownaction = "{action $*}";
+	dccownaction_target = "{action $*}";
+
+	# DCC chat, others
+	dccmsg = "%g/* $1- ($0) */";
+	dccquerynick = "%g$*%n";
+	dccaction = "{action $*}";
+
+	######## statusbar/topicbar ############################
+
+	# default background for all statusbars. You can also give
+	# the default foreground color for statusbar items.
+	sb_background = "%0";
+
+	# default backround for "default" statusbar group
+	#sb_default_bg = "%4";
+	# background for prompt / input line
+	sb_prompt_bg = "%n";
+	# background for info statusbar
+	#sb_info_bg = "%8";
+	# background for topicbar (same default)
+	#sb_topic_bg = "%4";
+
+	# text at the beginning of statusbars. sb-item already puts
+	# space there,so we don't use anything by default.
+	sbstart = "";
+	# text at the end of statusbars. Use space so that it's never
+	# used for anything.
+	sbend = "";
+
+	topicsbstart = "%BChannel: %b\"$*";
+	topicsbend = "$*%b\"";
+
+	prompt = " %K╽ ";
+
+	sb = "%R$*";
+	sbmode = " %K[%g%g+%n$*%K]";
+	sbaway = " %g/* zZzZ */%n";
+	sbservertag = ":%g$0%n";
+	sbnickmode = "$0";
+
+	# Usercount
+	sb_usercount = "{sb %_$0%_ nicks ($1-)}";
+	sb_uc_ircops = "%_*%_$*";
+	sb_uc_ops = "%_@%r$*%n";
+	sb_uc_halfops = "%_%%%g$*%n";
+	sb_uc_voices = "%_+%y$*%n";
+	sb_uc_normal = "%w$*%n";
+	sb_uc_space = " ";
+	# activity in statusbar
+
+	# ',' separator
+	sb_act_sep = " ";
+	# normal text
+	sb_act_text = "%K%9$*%n";
+	# public message
+	sb_act_msg = "%Y%9$*%n";
+	# hilight
+	sb_act_hilight = "%R%9$*%n";
+	# hilight with specified color, $0 = color, $1 = text
+	sb_act_hilight_color = "%R%9$1-%n";
+	
+	# new stuff
+	divider_right = " %K├╼%n";
+	divider = " %K│%n";
+};
+
+########################################################
+
+formats = {
+	"fe-common/core" = {
+		# Beginning of some non-msg lines
+		# No args
+		line_start = "%Bline_start%n ";
+
+		
+		# Beginning of other non-msg lines
+		# No args
+		line_start_irssi = "%Bline_start_irssi%n ";
+
+
+		# Somebody joins the channel
+		# line_start, $0 = nick, $1 = user, $2 = channel
+		join = "%Gjoin%n $0-";
+
+
+		# Somebody leaves the channel
+		#
+		part = "part $0-";
+
+
+		# Somebody gets kicked from the channel
+		#
+		kick = "kick $0-";
+
+
+		# Somebody quits their client
+		# $0 = nick, $1 = user, $2 = reason, $3 = channel
+		quit = "%Gquit%n $0-";
+
+
+		#
+		#
+		quit_once = "quit_once $0-";
+
+
+		# Somebody changes their nick
+		#
+		nick_changed = "nick_changed $0-";
+
+
+		# You change your nick
+		# line_start, $0 = old_nick, $1 = new_nick, $2 = user
+		your_nick_changed = "%Gyour_nick_changed%n $0-";
+
+
+		# Normal message in channel
+		# $0 = nick, $1 = msg, $2 = operator
+		pubmsg = "%Gpubmsg%n $2 %Y$0%n $1";
+
+
+		#
+		#
+		pubmsg_channel = "pubmsg_channel $0-";
+
+
+		# Your message in channel
+		# $0 = nick, $1 = msg, $2 = operator
+		own_msg = "%Gown_msg%n $0-";
+
+
+		#
+		#
+		own_msg_channel = "own_msg_channel $0-";
+
+
+		# Somebody highlights you in channel
+		# $0 = nick, $1 = msg, $2 = operator
+		pubmsg_me = "%Gpubmsg_me%n $2 $0 $1";
+
+
+		#
+		#
+		pubmsg_me_channel = "pubmsg_me_channel $0-";
+
+
+		#
+		#
+		pubmsg_hilight = "pubmsg_hilight $0-";
+		
+
+		#
+		#
+		pubmsg_hilight_channel = "pubmsg_hilight_channel $0-";
+
+
+		# Channel topic gets changed
+		# line_start, $0 = nick, $1 = channel, $2 = topic, $3 = user
+		new_topic = "%Gnew_topic%n $0-";
+
+
+		# Beginning of names list
+		# $0 = channel, $1 = total, $2 = ops, $3 = halfops, $4 = voice, $5 = normal
+		names = "%Gnames%n $0-";
+
+		
+		# line_start in names list
+		# $0 = channel
+		names_prefix = "%Gnames_prefix%n $0- ";
+
+
+		# Listitem for ops
+		# $0 = @, $1 = nick
+		names_nick_op = "%Gnames_nick_op%n $0 | $1";
+
+
+		# Listitem for halfops
+		# $0 = %, $1 = nick
+		names_nick_halfop = "%Gnames_nick_halfop%n $0 | $1";
+
+
+		# Listitem for voiced users
+		# $0 = +, $1 = nick
+		names_nick_voice = "%Gnames_nick_voice%n $0-";
+
+		# Listitem for normal users
+		# $0 = " ", $1 = nick
+		names_nick = "%Gnames_nick%n $0-";
+
+
+		# End of names list
+		# line_start_irssi, $0 = channel, $1 = total, $2 = ops, $3 = halfops, $4 = voice, $5 = normal
+		endofnames = "%Gendofnames%n $0-";
+
+
+		###########
+		# QUERIES
+		###########
+		
+		# Start of query
+		# $0 = nick, $1 = server
+		query_start = "%Gquery_start%n $0-";
+
+		# Your msg in query
+		# $0 = nick, $1 = msg, $2 = your nick
+		own_msg_private_query = "%Gown_msg_private_query%n $0-";
+
+
+		# msg in query
+		# $0 = nick, $1 = user, $2 = msg
+		msg_private_query = "%Gmsg_private_query%n $0-";
+		
+		#
+		#
+		no_query = "no_query $0-";
+		
+		# Query changed to different server
+		#
+		query_server_changed = "query_server_changed $0-";
+		
+		# Window isn't channel or query
+		#
+		not_channel_or_query = "not_channel_or_query $0-";
+
+		###########
+		# MISC
+		###########
+		
+		# Config saved
+		# line_start_irssi, $0 = file
+		config_saved = "%Gconfig_saved%n $0-";
+		
+		# Config reloaded
+		# line_start_irssi, $0 = file
+		config_reloaded = "%Gconfig_reloaded%n $0-";
+
+		# Config modified
+		#
+		config_modified = "config_modified $0-";
+		
+		# Confirm overwrite config
+		#
+		overwrite_config = "overwrite_config $0-";
+		
+		# Theme saved
+		# line_start_irssi, $0 = file
+		theme_saved = "theme_saved $0-";
+		
+		# Theme save failed
+		# line_start_irssi, $0 = file, $1 = error
+		theme_save_failed = "theme_save_failed $0-";
+
+		# Theme not found
+		# line_start_irssi, $0 = theme name
+		theme_not_found = "%Gtheme_not_found%n $0-";
+	};
+
+	"fe-common/irc" = {
+		# Channel mode changed
+		# line_start, $0 = channel, $1 = mode, $2 = changed by
+		chanmode_change = "%Gchanmode_change%n $0-";
+
+
+		server_chanmode_change = "server_chanmode_change $0-";
+
+
+		# Your /me
+		# $0 = nick, $1 = msg, $2 = channel
+		own_action = "%Gown_action%n $0-";
+
+
+		action_private = "action_private $0-";
+
+
+		action_private_query = "action_private_query $0-";
+
+
+		action_public = "action_public $0-";
+
+
+		ctcp_reply = "ctcp_reply $0-";
+
+
+		ctcp_reply_channel = "ctcp_reply_channel $0-";
+
+
+		ctcp_ping_reply = "ctcp_ping_reply $0-";
+
+
+		ctcp_requested = "ctcp_requested $0-";
+
+
+		ctcp_requested_unknowm = "ctcp_requested_unknowm $0-";
+
+
+
+		channel_synced = "channel_synced $0-";
+
+
+		channel_created = "channel_created $0-";
+	};
+
+	"Irssi::Script::ichat" = { ichat_timestamp = "%Y>%K>      $1 %y>%n"; };
+};

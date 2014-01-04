@@ -9,6 +9,9 @@ Xft.dpi: 96
 URxvt*font: xft:PragmataPro:size=7,xft:Kochi Gothic:size=7
 URxvt*boldFont: xft:PragmataPro:style=Bold:size=7,xft:Kochi Gothic:size=7
 
+! URxvt*font: xft:Source Code Pro:size=7,xft:Kochi Gothic:size=7
+! URxvt*boldFont: xft:Source Code Pro:style=Bold:size=7,xft:Kochi Gothic:size=7
+
 ! *font:     -misc-fixed-medium-r-normal--9-*-*-*-c-*-iso10646-1
 ! *boldFont: -jmk-neep-bold-r-normal--11-100-75-75-c-60-iso8859-1
 

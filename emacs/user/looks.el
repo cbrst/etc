@@ -1,7 +1,7 @@
 (add-to-list 'custom-theme-load-path
              (concat emacs-dir "themes/"))
 
-;; (set-face-attribute 'default nil :font "Source Code Pro-7")
+;; (set-face-attribute 'default nil :font "Source Code Pro-7.5")
 (set-face-attribute 'default nil :font "PragmataPro-7")
 ;; (set-face-attribute 'default nil :font "-misc-fixed-medium-r-normal--9-*-*-*-c-*-iso10646-1")
 

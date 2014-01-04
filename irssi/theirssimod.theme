@@ -176,12 +176,12 @@ abstracts = {
 
   # default background for all statusbars. You can also give
   # the default foreground color for statusbar items.
-  sb_background = "";
+  sb_background = "%0";
 
   # default backround for "default" statusbar group
   #sb_default_bg = "%4";
   # background for prompt / input line
-  sb_prompt_bg = "%n";
+  sb_prompt_bg = "%0";
   # background for info statusbar
   #sb_info_bg = "%8";
   # background for topicbar (same default)
@@ -243,7 +243,7 @@ formats = {
     nick_changed = "%K{channick $[-13]0} %G>%n {channick $1}";
     your_nick_changed = "%K          you %G>%n {channick $1}";
 
-    pubmsg = "{pubmsgnick $2 {pubnick \00311$[-13]0}}$1";
+    pubmsg = "{pubmsgnick $2 {pubnick \00312$[-13]0}}$1";
 
     own_msg = "{ownmsgnick $2 {ownnick $[-13]0}}$1";
     own_msg_channel = "{ownmsgnick $3 {ownnick $[-13]0}{msgchannel $1}}$2";

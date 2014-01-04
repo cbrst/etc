@@ -33,3 +33,6 @@
 *color7:  #383838
 *color15: #545454
 
+URxvt.cursorColor: #474747
+URxvt.highlightColor: #474747
+URxvt.highlightTextColor: #ff9f94

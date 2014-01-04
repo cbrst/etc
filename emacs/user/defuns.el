@@ -14,12 +14,12 @@ Including indent-buffer, which should not be called automatically on save."
   (delete-trailing-whitespace)
   (indent-buffer))
 
- (defun paste-xinu (start end)
-   "Paste current region or buffer to paste.xinu.at.
+(defun paste-xinu (start end)
+  "Paste current region or buffer to paste.xinu.at.
  Needs the command line client to be in $PATH."
-   (interactive (if (use-region-p)
-                    (list (region-beginning) (region-end))
-                  (list nil nil)))
+  (interactive (if (use-region-p)
+                   (list (region-beginning) (region-end))
+                 (list nil nil)))
   (shell-command (concat "fb <<\"EOF\" \n"
                          (if (and start end)
                              (buffer-substring-no-properties start end)
@@ -57,3 +57,12 @@ Including indent-buffer, which should not be called automatically on save."
   arg lines up."
   (interactive "*p")
   (move-text-internal (- arg)))
+
+(defun prefixr-region (start end)
+  "Run active region through the Prefixr API."
+  (interactive (if (use-region-p)
+                   (list (region-beginning) (region-end))
+                 (list (point-min) (point-max))))
+  (let ((str (buffer-substring-no-properties start end)))
+    (shell-command-on-region start end
+                             (concat "curl -sSd css=\"" str "\" http://prefixr.com/api/index.php") t t)))

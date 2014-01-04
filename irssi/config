@@ -217,6 +217,7 @@ statusbar = {
         prompt = { };
         prompt_empty = { };
         # treated specially, this is the real input line.
+        awl_0 = { alignment = "right"; };
         input = { priority = "10"; };
       };
     };
@@ -237,12 +238,14 @@ statusbar = {
     };
     add = { disabled = "yes"; };
     line = { items = { filline = { }; }; disabled = "yes"; };
+    status = { disabled = "yes"; };
     awl_0 = {
       items = {
         barstart = { priority = "100"; };
         awl_0 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
+      disabled = "yes";
     };
   };
 };
@@ -259,17 +262,22 @@ settings = {
     hilight_log_path = "/home/crshd/var/log/irc/hilight.log";
     mpd_format = "\\00303[\\00301♫\\00303] \\00305%ARTIST\\003 - \\00302%TITLE";
     statusbar_fill_string = "=-";
-    awl_display_key = "%_%7%k $N %0 $C %N";
+    awl_display_key = "%_%0%k $N %N";
     awl_separator = "\\";
-    awl_display_key_active = "%_%7%c $N %3%k $C %N";
+    awl_display_key_active = "%_%3%k $N %N";
     awl_display_key_visible = "%_%7%k $N %1 $C %N";
     awl_placement = "bottom";
-    awl_display_key_message = "%_%7%c $N %1%k $C %N";
+    awl_display_key_message = "%_%1%k $N %N";
   };
 };
 logs = {
   "~/var/log/irc/hilight.log" = { auto_open = "yes"; level = "HILIGHTS"; };
 };
+hilights = ( { text = "crshd"; nick = "no"; word = "no"; } );
+keyboard = (
+  { key = "meta-left"; id = "command"; data = "window left"; },
+  { key = "meta-Left"; id = "command"; data = "window left"; }
+);
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
   2 = {
@@ -322,10 +330,35 @@ windows = {
       }
     );
   };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#herbstluftwm";
+        tag = "Node";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#sailsjs";
+        tag = "Node";
+      }
+    );
+  };
+  9 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "&bitlbee";
+        tag = "Bee";
+      }
+    );
+  };
 };
-mainwindows = { 1 = { first_line = "0"; lines = "33"; }; };
-hilights = ( { text = "crshd"; nick = "no"; word = "no"; } );
-keyboard = (
-  { key = "meta-left"; id = "command"; data = "window left"; },
-  { key = "meta-Left"; id = "command"; data = "window left"; }
-);
+mainwindows = { 1 = { first_line = "0"; lines = "29"; }; };

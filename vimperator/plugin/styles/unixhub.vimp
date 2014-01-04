@@ -180,13 +180,17 @@ hr {
 		background-color: rgb(34,34,34) !important;
 }
 
-.largetext a[href*="uid=17"] {
+.largetext a[href="http://forums.unixhub.net/member.php?action=profile&uid=17"] {
 		color: orange !important;
 		text-shadow: 0 0 5px orange !important;
 }
 
 span[style="color: #bb3e3e;"] {
 		text-shadow: 0 0 5px #bb3e3e !important;
+}
+
+.smalltext img {
+		margin: 20px 0 !important;
 }
 
 EOM

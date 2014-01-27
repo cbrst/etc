@@ -11,7 +11,7 @@ alias mkdir="mkdir -p"
 alias rm="rm -r"
 
 # Coreutils stuff
-alias ls="ls --color=auto --group-directories-first"
+[[ $OSTYPE =~ ^darwin.* ]] || alias ls="ls --color=auto --group-directories-first"
 alias l="ls"
 alias la="ls -a"
 alias ll="ls -lh"

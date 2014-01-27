@@ -39,6 +39,11 @@ path_dirs=(
 	/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.4
 	/usr/games/bin
 )
+
+# If we're running OS X, add /usr/pkg/bin to the path for pkgsrc
+[[ $OSTYPE =~ ^darwin.* ]] && path_dirs+=(/usr/pkg/bin)
+
+# Make a string out of the array and assing it to $PATH
 export PATH=${(j_:_)path_dirs}
 
 # Debug mode

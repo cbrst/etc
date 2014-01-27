@@ -3,8 +3,8 @@
   (interactive)
   (if window-system
       (progn
-        (add-to-list 'default-frame-alist (cons 'height 60))
-        (add-to-list 'default-frame-alist (cons 'width 120)))))
+        (add-to-list 'default-frame-alist (cons 'height 50))
+        (add-to-list 'default-frame-alist (cons 'width 90)))))
 (set-frame-size-according-to-resolution)
 
 ;; those backup files are annoying. that's what git is for

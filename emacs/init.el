@@ -1,5 +1,7 @@
 ;; Custom paths
-(defvar emacs-dir (concat (getenv "XDG_CONFIG_HOME") "/emacs/")
+(defvar emacs-dir (if (eq system-type 'darwin)
+                      (concat (getenv "HOME") "/etc/emacs/")
+                    (concat (getenv "XDG_CONFIG_HOME") "/emacs/"))
 	"top level emacs dir")
 
 (defvar vendor-dir (concat emacs-dir "vendor/")

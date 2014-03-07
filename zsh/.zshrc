@@ -8,7 +8,7 @@ autoload -U zmc
 zmodload zsh/complist
 zmodload zsh/terminfo
 
-HISTFILE=~/var/zsh/histfile
+HISTFILE=${XDG_DATA_HOME}/zsh/histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
@@ -29,7 +29,7 @@ bindkey -v
 # This is already in zshenv, why doesn't it work?
 path_dirs=(
 	${BIN_HOME}
-	${BIN_HOME}/scripts
+	${BIN_HOME}/tools
 	${XDG_DATA_HOME}/node/bin
 	$(cope_path.pl)
 	/usr/local/bin
@@ -41,7 +41,11 @@ path_dirs=(
 )
 
 # If we're running OS X, add /usr/pkg/bin to the path for pkgsrc
-[[ $OSTYPE =~ ^darwin.* ]] && path_dirs+=(/usr/pkg/bin)
+[[ $OSTYPE =~ ^darwin.* ]] && path_dirs+=(
+	/Applications
+	/usr/pkg/bin
+	${HOME}/Applications
+)
 
 # Make a string out of the array and assing it to $PATH
 export PATH=${(j_:_)path_dirs}
@@ -64,3 +68,5 @@ done
 if [ -f $HOME/etc/dircolors/dircolors ]; then
 	eval $(dircolors -b $HOME/etc/dircolors/dircolors)
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

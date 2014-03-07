@@ -18,6 +18,10 @@ alias ll="ls -lh"
 alias lla="ls -lah"
 alias df="df -h"
 
+# zmc
+alias mmv="noglob zmv -W"
+alias ccp="noglob zmv -W -C"
+
 # Why doesn't autocd do this?
 alias -- -="cd -"
 alias ...="cd ../.."
@@ -32,8 +36,6 @@ alias gp="git push"
 alias gs="git status"
 
 # wrapper scripts
-alias e="emacs_wrapper.sh"
-alias t="tmux_wrapper.sh"
 alias whine="wine_wrapper.sh"
 
 # droid stuffs
@@ -45,6 +47,7 @@ alias _="sudo"
 alias rs="(redshift -l 3:101 -b0.7 -t 5500:4700&)"
 alias aria2="aria2c -s 4 --max-connection-per-server=4"
 alias hc="herbstclient"
+alias checkarchive="diff --suppress-common-lines -y <(cd ~/Music; gls --ignore='*OGG'|sort) ,(cd /Volumes/Untitled/christian/Music/; gls --ignore='*FLAC'|sort)"
 
 # overwrite shell builtins
 alias time="/usr/bin/time"

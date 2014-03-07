@@ -35,7 +35,6 @@
 (defvar elpa-required-packages '(
                                  ace-jump-mode
                                  auto-complete
-                                 autopair
                                  expand-region
                                  evil
                                  fetch
@@ -47,12 +46,12 @@
                                  markdown-mode
                                  mmm-mode
                                  multiple-cursors
-                                 paredit
                                  rainbow-delimiters
                                  rainbow-mode
                                  sawfish
                                  smart-tab
                                  smart-tabs-mode
+                                 smartparens
                                  stylus-mode
                                  sws-mode
                                  undo-tree

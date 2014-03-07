@@ -39,16 +39,12 @@
                                  evil
                                  fetch
                                  haml-mode
-                                 haskell-mode
                                  js3-mode
-                                 lua-mode
                                  magit
                                  markdown-mode
-                                 mmm-mode
                                  multiple-cursors
                                  rainbow-delimiters
                                  rainbow-mode
-                                 sawfish
                                  smart-tab
                                  smart-tabs-mode
                                  smartparens
@@ -76,11 +72,9 @@
 (add-to-list 'load-path vendor-dir)
 (add-to-list 'load-path module-dir)
 
-
 ;; Require packages in module dir
 (mapc 'load (directory-files module-dir nil "^[^#].*el$"))
 (mapc 'load (directory-files vendor-dir nil "^[^#].*el$"))
-
 
 ;; Start server
 (server-start)

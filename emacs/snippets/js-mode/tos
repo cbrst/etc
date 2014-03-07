@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: .toString()
+# key: tos
+# --
+.toString()$0

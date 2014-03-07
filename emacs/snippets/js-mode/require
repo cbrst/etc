@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: require
+# key: require
+# --
+var ${1:name} = require('$1');
+$0

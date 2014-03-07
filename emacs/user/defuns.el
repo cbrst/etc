@@ -66,3 +66,13 @@ Including indent-buffer, which should not be called automatically on save."
   (let ((str (buffer-substring-no-properties start end)))
     (shell-command-on-region start end
                              (concat "curl -sSd css=\"" str "\" http://prefixr.com/api/index.php") t t)))
+
+(defun replace-under-cursor (word)
+  "Replace all occurences of the word under the cursor"
+  (interactive "sReplace with: ")
+  (save-excursion
+    (forward-word)
+    (let ((end (point)))
+      (backward-word)
+      (kill-ring-save (point) end)
+      (replace-string (current-kill 0) word nil (point-min) (point-max)))))

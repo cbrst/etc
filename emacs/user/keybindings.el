@@ -38,6 +38,8 @@
 (global-set-key (kbd "M-[") 'backward-paragraph)
 (global-set-key (kbd "M-]") 'forward-paragraph)
 
+(global-set-key (kbd "M-/") 'replace-under-cursor)
+
 ;; EVIL
 
 ;; wrap selection

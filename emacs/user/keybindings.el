@@ -32,6 +32,9 @@
 (global-set-key (kbd "C-c f c") 'ace-jump-char-mode)
 (global-set-key (kbd "C-c f l") 'ace-jump-line-mode)
 
+;; speedbar
+(global-set-key (kbd "C-c b") 'sr-speedbar-toggle)
+
 (global-set-key (kbd "C-<up>") 'move-text-up)
 (global-set-key (kbd "C-<down>") 'move-text-down)
 

@@ -1,0 +1,3 @@
+#name : <img src="..." class="..." alt="..." />
+# --
+<img src="$1" class="$2" alt="$3">

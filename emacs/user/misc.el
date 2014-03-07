@@ -1,11 +1,11 @@
 ;; default window size
-(defun set-frame-size-according-to-resolution ()
-  (interactive)
-  (if window-system
-      (progn
-        (add-to-list 'default-frame-alist (cons 'height 50))
-        (add-to-list 'default-frame-alist (cons 'width 90)))))
-(set-frame-size-according-to-resolution)
+;; (defun set-frame-size-according-to-resolution ()
+;;   (interactive)
+;;   (if window-system
+;;       (progn
+;;         (add-to-list 'default-frame-alist (cons 'height 47))
+;;         (add-to-list 'default-frame-alist (cons 'width 90)))))
+;; (set-frame-size-according-to-resolution)
 
 ;; those backup files are annoying. that's what git is for
 (setq make-backup-files nil)
@@ -32,8 +32,22 @@
 
 ;; enable some modes
 (ido-mode t)
-(autopair-mode 1)
 (show-paren-mode 1)
+
+;; disable bell
+(setq ring-bell-function 'ignore)
+
+;; fix lambda-mode symbol
+(setq lambda-symbol "λ")
+
+;; append PATH
+(let ((paths
+       '("/usr/local/bin"
+         "/usr/pkg/bin"
+         "/sbin")))
+  (setq exec-path (append exec-path paths)))
+
+(setq markdown-command "/usr/pkg/bin/markdown")
 
 (defadvice server-done (before save-before-server-done activate)
   "Automatically save buffer when done."

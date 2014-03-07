@@ -37,7 +37,6 @@
                                  auto-complete
                                  expand-region
                                  evil
-                                 fetch
                                  haml-mode
                                  magit
                                  markdown-mode

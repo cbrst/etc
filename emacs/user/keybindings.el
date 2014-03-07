@@ -21,7 +21,7 @@
 (global-set-key (kbd "C-c g") 'magit-status)
 
 ;; reindent buffer
-(global-set-key (kbd "C-c i") 'indent-buffer)
+(global-set-key (kbd "C-c i") 'cleanup-buffer)
 
 ;; expand-region
 (global-set-key (kbd "C-+") 'er/expand-region)
@@ -66,3 +66,6 @@
 
 ;; string-rectangle from visual mode
 (define-key evil-visual-state-map (kbd "r") 'string-rectangle)
+
+;; rebind <Esc> to C-g
+(define-key evil-insert-state-map (kbd "C-g") 'evil-force-normal-state)

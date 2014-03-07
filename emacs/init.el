@@ -39,7 +39,6 @@
                                  evil
                                  fetch
                                  haml-mode
-                                 js3-mode
                                  magit
                                  markdown-mode
                                  multiple-cursors

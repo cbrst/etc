@@ -47,6 +47,7 @@
                                  smart-tab
                                  smart-tabs-mode
                                  smartparens
+                                 solarized-theme
                                  stylus-mode
                                  sws-mode
                                  undo-tree

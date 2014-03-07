@@ -1,10 +1,12 @@
 .openoffice/
 cache
 common-lisp
+configstore/*
 darktable
 easytag
 emacs/ac-comphist.dat
 emacs/auto-save-list
+emacs/ede-projects.el
 emacs/elpa
 emacs/tetris-scores
 emacs/tramp

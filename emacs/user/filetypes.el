@@ -1,13 +1,6 @@
-(require 'mmm-auto)
-(setq mmm-global-mode 'maybe)
-
-(setq mmm-submode-decoration-level 2
-      mmm-parse-when-idle t)
-
 ;; emacs doesn't know about these by default.
 (setq auto-mode-alist
       (nconc
-       '((".sawfishrc" . lisp-mode))
        '((".hamd"      . haml-mode))
        '((".zsh"       . sh-mode))
        auto-mode-alist))

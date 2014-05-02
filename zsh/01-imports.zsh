@@ -3,6 +3,8 @@ if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
 		source /usr/bin/virtualenvwrapper.sh
 fi
 
+source ${HOME}/.rvm/scripts/rvm
+
 # Load external modules if they exist
 MODDIR=$ZDOTDIR/modules/
 function ifload {

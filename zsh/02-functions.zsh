@@ -17,3 +17,6 @@ tuds() { scrot -s ${1}.png; fb ${1}.png; rm ${1}.png }
 # add $PWD to $PATH
 # This breaks virtualenv
 # chpwd() { export PATH=${PWD}:${(j_:_)path_dirs} }
+
+export VENV_SOURCED=0
+autoload workon

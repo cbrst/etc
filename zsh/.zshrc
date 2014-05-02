@@ -32,6 +32,7 @@ path_dirs=(
 	${BIN_HOME}
 	${BIN_HOME}/tools
 	${XDG_DATA_HOME}/node/bin
+	${HOME}/.rvm/bin
 	/usr/local/bin
 	/usr/bin
 	/bin
@@ -49,6 +50,9 @@ path_dirs=(
 
 # Make a string out of the array and assing it to $PATH
 export PATH=${(j_:_)path_dirs}
+
+# Add to fpath
+fpath=($fpath ${ZDOTDIR}/functions)
 
 # Debug mode
 DEBUG=0

@@ -30,8 +30,18 @@
 ;; i'm too lazy to type 2-3 characters
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; enable some modes
+;; ido
 (ido-mode t)
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
+
+;; load smartparens config
+(require 'smartparens-config)
+
+;; git gutter
+(global-git-gutter+-mode 1)
+
+;; show-paren-mode
 (show-paren-mode 1)
 
 ;; disable bell
@@ -39,6 +49,16 @@
 
 ;; fix lambda-mode symbol
 (setq lambda-symbol "λ")
+
+;; scrolling behavior
+(setq redisplay-dont-pause t
+      scroll-margin 1
+      scroll-step 1
+      scroll-conservatively 10000
+      scroll-preserve-screen-position 1)
+
+(setq mouse-wheel-follow-mouse 't
+      mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 
 ;; append PATH
 (let ((paths

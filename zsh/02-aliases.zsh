@@ -11,11 +11,16 @@ alias mkdir="mkdir -p"
 alias rm="rm -r"
 
 # Coreutils stuff
-[[ $OSTYPE =~ ^darwin.* ]] || alias ls="ls --color=auto --group-directories-first"
-alias l="ls"
-alias la="ls -a"
-alias ll="ls -lh"
-alias lla="ls -lah"
+if [[ $OSTYPE =~ ^darwin.* ]]; then
+	alias l="gls --color=auto --group-directories-first"
+else
+	alias l="ls --color=auto --group-directories-first"
+fi
+alias ls="l"
+alias la="l -a"
+alias ll="l -lh"
+alias lla="l -lah"
+
 alias df="df -h"
 
 # zmc

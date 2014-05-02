@@ -27,11 +27,11 @@ setopt autocd complete_in_word correct
 bindkey -v
 
 # This is already in zshenv, why doesn't it work?
+# COPE_PATH=$(~/bin/tools/cope_path.pl)
 path_dirs=(
 	${BIN_HOME}
 	${BIN_HOME}/tools
 	${XDG_DATA_HOME}/node/bin
-	$(cope_path.pl)
 	/usr/local/bin
 	/usr/bin
 	/bin
@@ -53,7 +53,7 @@ export PATH=${(j_:_)path_dirs}
 # Debug mode
 DEBUG=0
 function debug {
-	[[ $DEBUG > 0 ]] && echo "\033[1;33mDEBUG:\033[0m zsh: $1"
+	[[ $DEBUG -lt 0 ]] && echo "\033[1;33mDEBUG:\033[0m zsh: $1"
 }
 function error {
 	echo "\033[1;31mERROR:\033[0m zsh: $1"
@@ -66,6 +66,7 @@ for r in $HOME/etc/zsh/*.zsh; do
 done
 
 if [ -f $HOME/etc/dircolors/dircolors ]; then
+	[[ $OSTYPE =~ ^darwin.* ]] && alias dircolors=gdircolors
 	eval $(dircolors -b $HOME/etc/dircolors/dircolors)
 fi
 

@@ -1,0 +1,5 @@
+if [[ ($rvm_ruby_string > 0) && ($rvm_ruby_string != "system") ]]; then
+   export PS_RVM="%B%F{8}%K{9} ${rvm_ruby_version} %K{1} ${rvm_gemset_name} %k%f%b"
+else
+   export PS_RVM=""
+fi

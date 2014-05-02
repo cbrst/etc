@@ -5,6 +5,7 @@
            speedbar-smart-directory-expand-flag t
            speedbar-directory-button-trim-method 'trim
            speedbar-use-images nil
+           sr-speedbar-auto-refresh nil
            sr-speedbar-width 20
            sr-speedbar-width-x 20
            sr-speedbar-right-side nil)

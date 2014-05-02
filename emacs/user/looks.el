@@ -2,10 +2,9 @@
              (concat emacs-dir "themes/"))
 
 (when window-system
-  (setq-default line-spacing 2)
-  (set-face-font 'default "Source Code Pro-11")
+  (set-face-font 'default "Meslo LG L DZ-11")
   (set-face-font 'variable-pitch "Lucida Grande-11")
-  (set-face-font 'fixed-pitch "Source Code Pro-11"))
+  (set-face-font 'fixed-pitch "Meslo LG L DZ-11"))
 
 ;; minibuffer doesn't like line-spacing != 0
 (add-hook 'minibuffer-setup-hook
@@ -19,17 +18,32 @@
     (load-theme 'extensions t)))  
 
 (setq solarized-high-contrast-mode-line t)
+(load-theme 'solarized-grey t)
 
-(load-theme 'solarized-light t)
+;; Change title format
+(setq frame-title-format "%f")
 
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (menu-bar-mode 1)
-(blink-cursor-mode 0)
+;; (blink-cursor-mode 0)
 (setq inhibit-splash-screen t)
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 
 (setq linum-format " %3d")
 
 (global-rainbow-delimiters-mode t)
 
+(let ((accent-red    "#e36f3e")
+      (accent-green  "#00a978")
+      (accent-yellow "#be8612"))
+  (custom-set-faces
+   `(git-gutter+-added
+     ((t (:background ,accent-green :foreground ,accent-green
+                      :weight bold))))
+   `(git-gutter+-deleted
+     ((t (:background ,accent-red :foreground ,accent-red
+                      :weight bold))))
+   `(git-gutter+-modified
+     ((t (:background ,accent-yellow :foreground ,accent-yellow
+                      :weight bold))))))

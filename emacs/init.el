@@ -37,7 +37,9 @@
                                  auto-complete
                                  expand-region
                                  evil
-                                 haml-mode
+                                 git-gutter-fringe+
+                                 ido-vertical-mode
+                                 iedit
                                  magit
                                  markdown-mode
                                  multiple-cursors
@@ -51,6 +53,8 @@
                                  sws-mode
                                  undo-tree
                                  yasnippet
+                                 yaml-mode
+                                 scss-mode
                                  ;; From here on, these packages depend on one
                                  ;; or more of the above, so they have to be
                                  ;; installed last

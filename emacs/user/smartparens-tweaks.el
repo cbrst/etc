@@ -1,5 +1,3 @@
-(smartparens-global-mode t)
-
 (defun sp-pair-on-newline (id action context)
   "Put trailing pair on newline and return to point"
   (save-excursion

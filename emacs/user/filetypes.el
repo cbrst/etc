@@ -10,6 +10,3 @@
 (add-to-list 'load-path filetypes-dir)
 
 (mapc 'load (directory-files filetypes-dir nil "^[^#].*el$"))
-
-;; mmm
-(setq mmm-global-mode 'maybe)

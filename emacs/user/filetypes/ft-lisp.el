@@ -6,3 +6,5 @@
 (add-hook 'lisp-mode-hook 'lisp-indentation)
 
 (add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
+
+(add-hook 'lisp-mode-hook #'enable-paredit-mode)

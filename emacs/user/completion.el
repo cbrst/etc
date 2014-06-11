@@ -1,5 +1,6 @@
 (yas-global-mode 1)
 
+<<<<<<< HEAD
 (eval-after-load 'auto-complete
   '(progn
      (require 'auto-complete-config)
@@ -21,3 +22,13 @@
                      ac-source-imenu
                      ac-source-dictionary
                      ac-source-yasnippet))))
+=======
+(require 'auto-complete-config)
+(ac-config-default)
+
+(setq ac-sources
+      '(ac-source-words-in-same-mode-buffers
+        ac-source-abbrev
+        ac-source-dictionary
+        ac-source-yasnippet))
+>>>>>>> FETCH_HEAD

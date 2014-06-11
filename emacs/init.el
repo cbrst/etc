@@ -39,7 +39,10 @@
                                  emmet-mode
                                  expand-region
                                  evil
+<<<<<<< HEAD
                                  git-gutter-fringe+
+=======
+>>>>>>> FETCH_HEAD
                                  ido-vertical-mode
                                  iedit
                                  magit
@@ -58,8 +61,11 @@
                                  markdown-mode
                                  stylus-mode
                                  sws-mode
+<<<<<<< HEAD
                                  yaml-mode
                                  scss-mode
+=======
+>>>>>>> FETCH_HEAD
                                  ;; From here on, these packages depend on one
                                  ;; or more of the above, so they have to be
                                  ;; installed last

@@ -8,6 +8,7 @@ emacs/ac-comphist.dat
 emacs/auto-save-list
 emacs/ede-projects.el
 emacs/elpa
+emacs/eshell
 emacs/tetris-scores
 emacs/tramp
 emacs/url

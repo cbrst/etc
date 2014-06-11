@@ -57,23 +57,23 @@
 
 (defun makemodeline ()
   (setq-default mode-line-format
-        '(""
-          (:eval
-           (let* ((lhs (list
-                        (ml/format evil-mode-line-msg 'mode-line-evil)
-                        " "
-                        (ml/format "%b" 'mode-line-buffer-name)
-                        " "
-                        (ml/format mode-name 'mode-line-mode)
-                        (ml/format minor-mode-alist 'mode-line-minor-mode)))
-                  (rhs (list
-                        (ml/format "%4l:" 'mode-line-line)
-                        (ml/column)
-                        " "
-                        (ml/format which-func-format 'mode-line-func))))
-             (concat (ml/render lhs)
-                     (ml/fill 'mode-line-line-face (ml/width rhs))
-                     (ml/render rhs)))))))
+                '(""
+                  (:eval
+                   (let* ((lhs (list
+                                (ml/format evil-mode-line-msg 'mode-line-evil)
+                                " "
+                                (ml/format "%b" 'mode-line-buffer-name)
+                                " "
+                                (ml/format mode-name 'mode-line-mode)
+                                (ml/format minor-mode-alist 'mode-line-minor-mode)))
+                          (rhs (list
+                                (ml/format which-func-format 'mode-line-func)
+                                " "
+                                (ml/format "%4l:" 'mode-line-line)
+                                (ml/column))))
+                     (concat (ml/render lhs)
+                             (ml/fill 'mode-line-line-face (ml/width rhs))
+                             (ml/render rhs)))))))
 (makemodeline)
 
 (defvar mode-line-cleaner-alist

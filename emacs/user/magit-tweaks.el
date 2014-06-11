@@ -1,9 +1,9 @@
 ;; Add extra newline to separate commit messages
-(defun magit-commit-mode-init ()
-  (when (looking-at "\n")
-    (open-line 1)))
+;; (defun magit-commit-mode-init ()
+;;   (when (looking-at "\n")
+;;     (open-line 1)))
 
-(add-hook 'git-commit-mode-hook 'magit-commit-mode-init)
+;; (add-hook 'git-commit-mode-hook 'magit-commit-mode-init)
 
 ;; Ammend commit without prompt
 (defun magit-just-ammend ()

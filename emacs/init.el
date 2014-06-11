@@ -16,6 +16,7 @@
 
 ;; ELPA Stuff
 
+(setq package-check-signature 'nil)
 (require 'package)
 
 ;; Add some repos
@@ -38,6 +39,7 @@
                                  emmet-mode
                                  expand-region
                                  evil
+                                 git-gutter-fringe+
                                  ido-vertical-mode
                                  iedit
                                  magit
@@ -56,6 +58,8 @@
                                  markdown-mode
                                  stylus-mode
                                  sws-mode
+                                 yaml-mode
+                                 scss-mode
                                  ;; From here on, these packages depend on one
                                  ;; or more of the above, so they have to be
                                  ;; installed last

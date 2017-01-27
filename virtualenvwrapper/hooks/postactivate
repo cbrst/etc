@@ -1,1 +1,0 @@
-export PS_VENV="%B%F{8}%K{10} $(python -V 2>&1 | cut -d ' ' -f 2) %K{2} ${VIRTUAL_ENV##*/} %k%b"

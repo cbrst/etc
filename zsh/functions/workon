@@ -1,8 +1,0 @@
-if [ ${VENV_SOURCED} -eq 1 ]; then
-   workon $@
-else
-	debug "Sourcing virtualenvwrapper.sh"
-	source /usr/local/bin/virtualenvwrapper.sh
-	export VENV_SOURCED=1
-	workon $@
-fi

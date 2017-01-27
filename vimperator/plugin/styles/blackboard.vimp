@@ -1,3 +1,0 @@
-style -name=blackboard curriculum.kcdistancelearning.com <<EOM
-			body { color: black !important; }
-EOM
